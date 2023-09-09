@@ -1,4 +1,4 @@
-<?php include('views/pages/login_page.php') ?>
+<?php include('views/pages/register_page.php') ?>
 <!doctype html>
 <html lang="en">
   <head>
