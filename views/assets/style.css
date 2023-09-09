@@ -2,6 +2,12 @@
     font-family: 'Mochiy Pop P One', sans-serif;
 }
 
+.nav-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
 .footer-default {
     position: fixed;
     left: 0;
@@ -65,5 +71,57 @@
     height: 3rem;
     position: fixed;
     right: 45rem;
-    top: 15rem;
+    top: 50rem;
+}
+
+.aside-container {
+    position: fixed;
+    z-index: 3;
+    display: inline-block;
+    margin: 20px;
+    padding: 20px;
+    min-height:90%;
+    height:auto;
+    width: 25rem;
+    background-color: #232323;
+    border-radius: 10px;
+    color: #FCFFF4;
+}
+
+.profile-img {
+    display: relative;
+    left: 100px;
+    height: 12rem;
+    width: 12rem;
+    border-radius: 500px;
+}
+
+.profile-header {
+    font-family: 'IBM Plex Sans Condensed', sans-serif;
+    text-align: center;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.projects-title {
+    font-size: 35px;
+}
+
+.projects-container {
+    margin-top: 2.5rem;
+    margin-left: 30%;
+    width: 60%;
+}
+
+.websites-projects-title {
+    text-align: center;
+}
+
+.inline-test {
+    display: flex;
+}
+
+.projects-header {
+    display: flex;
+    justify-content: space-between;
 }
