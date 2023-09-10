@@ -2,7 +2,7 @@
 <?php
 // Verifique se há uma mensagem de erro na URL
 if (isset($_GET['error'])) {
-    $error = "Senha ou email inválidos!";
+    $error = $_GET['error'];
 }
 
 ?>
@@ -41,7 +41,7 @@ if (isset($_GET['error'])) {
     </div>
     <h1 class="create-account-text">Login</h1>
     <div class="form-box">
-        <form method="POST" action="../controllers/LoginController.php">
+        <form method="POST" action="controllers/LoginController.php">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">

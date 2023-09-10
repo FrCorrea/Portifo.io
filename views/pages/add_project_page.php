@@ -1,5 +1,5 @@
-<?php include('views/components/header.php') ?>
-<?php include('views/components/aside.php') ?>
+<?php include('../components/header.php') ?>
+<?php include('../components/aside.php') ?>
 
 <!doctype html>
 
@@ -11,7 +11,7 @@
 
     <title>Login - Portifo.io</title>
 
-    <link rel="stylesheet" type="text/css" href="views/assets/style.css">
+    <link rel="stylesheet" type="text/css" href=../assets/style.css>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,7 +31,9 @@
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
             <button type="button" class="btn btn-dark btn-floating btn-back-custom">
-                <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <a href="home_page.php">
+                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                </a>
             </button>
         </div>
         <div class="project-inputs">
@@ -74,7 +76,6 @@
 
         </div>
         <div class="buttons-group">
-            <button type="button" class="btn btn-secondary btn-custom">Cancel</button>
             <button type="button" class="btn btn-dark btn-custom">Add project</button>
         </div>
     </div>

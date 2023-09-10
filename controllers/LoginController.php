@@ -1,19 +1,44 @@
 <?php
-echo 'chegou no controller';
-
 session_start();
+
+include '../models/model.user.php';
 
 // Verifica se o formulário foi submetido
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
-    // Verifica as credenciais (substitua por sua lógica de autenticação)
-    if ($email === 'email@teste.com' && $password === '12345') {
+
+    if (strpos($email, '@') == false) {
+        header('Location: ../views/pages/login_page.php?error=Email deve possuir @');
+        exit; // Certifique-se de sair do script após o redirecionamento.
+    }
+
+    if (strlen($password) < 6) {
+        header('Location: ../views/pages/login_page.php?error=Senha insuficiente');
+        exit; // Certifique-se de sair do script após o redirecionamento.
+    }
+
+    $emailFound = false;
+    $userId = null;
+    $userName = null;
+
+    foreach ($users as $user) {
+        if ($user['email'] === $email && $user['password'] === $password) {
+            $emailFound = true;
+            $userId = $user['id'];
+            $userName = $user['name'];
+            break; // Saia do loop assim que encontrar o email
+        }
+    }
+
+    if ($emailFound) {
         // Autenticação bem-sucedida, defina uma variável de sessão para marcar o usuário como logado
+        $_SESSION['user_id'] = $userId;
+        $_SESSION['user_name'] = $userName;
         $_SESSION['logged_in'] = true;
         header('Location: ../views/pages/home_page.php'); // Redireciona para a área protegida
     } else {
-        header('Location: ../views/pages/login_page.php?error=invalid_credentials');
+        header('Location: ../views/pages/login_page.php?error=Usuário ou senha inválidos');
     }
 }
 
