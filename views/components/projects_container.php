@@ -6,17 +6,17 @@
     <div class="websites-projects-container">
         <h4 class="websites-projects-title">Websites</h4>
         <div class="projects-carousel">
-            <?php include('views/components/websites_carousel.php') ?>
+            <?php include('websites_carousel.php') ?>
         </div>
 
         <h4 class="websites-projects-title">Apps</h4>
         <div class="projects-carousel">
-            <?php include('views/components/websites_carousel.php') ?>
+            <?php include('websites_carousel.php') ?>
         </div>
 
         <h4 class="websites-projects-title">Designs</h4>
         <div class="projects-carousel">
-            <?php include('views/components/websites_carousel.php') ?>
+            <?php include('websites_carousel.php') ?>
         </div>
     </div>
 </div>

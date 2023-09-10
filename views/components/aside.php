@@ -1,6 +1,6 @@
 <div class="aside-container">
     <div class="img-container">
-        <img src="views/assets/clipboard.png" alt="" class="profile-img">
+        <img src="../assets/clipboard.png" alt="" class="profile-img">
     </div>
     <div class="profile-header">
         <h3 class="profile-name"><b>Amanda Rodrigues Vieira</b></h1>
