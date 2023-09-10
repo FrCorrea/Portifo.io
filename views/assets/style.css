@@ -113,6 +113,14 @@
     width: 60%;
 }
 
+.add-project-container {
+    margin-top: 2.5rem;
+    margin-left: 30%;
+    padding: 1rem;
+    width: 60%;
+    /* border: 2px solid black; */
+}
+
 .websites-projects-title {
     text-align: center;
 }
@@ -124,4 +132,23 @@
 .projects-header {
     display: flex;
     justify-content: space-between;
+}
+
+.buttons-group {
+    margin-top: 1rem;
+    justify-content: flex-end;
+}
+
+.btn-custom {
+    width: 25%;
+}
+
+.input-row {
+    margin-bottom: 1rem;
+}
+
+.add-project-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1rem;
 }
