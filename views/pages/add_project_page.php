@@ -1,5 +1,5 @@
-<?php include('../components/header.php') ?>
-<?php include('../components/aside.php') ?>
+<?php include('views/components/header.php') ?>
+<?php include('views/components/aside.php') ?>
 
 <!doctype html>
 
@@ -11,12 +11,12 @@
 
     <title>Login - Portifo.io</title>
 
-    <link rel="stylesheet" type="text/css" href=../assets/style.css>
+    <link rel="stylesheet" type="text/css" href=views/assets/style.css>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        
+
     <link href="https://fonts.googleapis.com/css2?family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:wght@100;300&family=Mochiy+Pop+P+One&display=swap" rel="stylesheet">
@@ -37,46 +37,47 @@
             </button>
         </div>
         <div class="project-inputs">
-            <div class="row input-row">
-                <div class="col-sm from-group">
-                    <label class="form-label">Name</label>
-                    <input class="form-control" type="text" />
+            <form method="POST" action="controllers/ProjectController.php">
+                <div class="row input-row">
+                    <div class="col-sm from-group">
+                        <label class="form-label">Name</label>
+                        <input class="form-control" type="text" name="name" />
+                    </div>
+                    <div class="col-sm ">
+                        <label class="form-label">Type</label>
+                        <select class="form-select" aria-label="Default select example" name="type">
+                            <option selected>Select the project type</option>
+                            <option value="1">Website</option>
+                            <option value="2">Application</option>
+                            <option value="3">Design</option>
+                        </select>
+                    </div>
                 </div>
-                <div class="col-sm ">
-                    <label class="form-label">Type</label>
-                    <select class="form-select" aria-label="Default select example">
-                        <option selected>Select the project type</option>
-                        <option value="1">Website</option>
-                        <option value="2">Application</option>
-                        <option value="3">Design</option>
-                    </select>
+                <div class="row input-row">
+                    <div class="col-sm from-group">
+                        <label class="form-label">Github Link</label>
+                        <input class="form-control" type="text" name="github-link" />
+                    </div>
+                    <div class="col-sm from-group">
+                        <label for="disabledTextInput" class="form-label">Users</label>
+                        <input class="form-control" id="disabledInput" type="text" name="users" placeholder="Option not available at the moment" disabled>
+                    </div>
                 </div>
-            </div>
-            <div class="row input-row">
-                <div class="col-sm from-group">
-                    <label class="form-label">Github Link</label>
-                    <input class="form-control" type="text" />
+                <div class="row input-row">
+                    <div class="col-sm">
+                        <label class="form-label">Description</label>
+                        <textarea class="form-control" id="textAreaExample3" rows="2" name="description"></textarea>
+                    </div>
+                    <div class="col-sm">
+                        <label class="form-label">Technologies</label>
+                        <textarea class="form-control" id="textAreaExample3" rows="2" name="technologies"></textarea>
+                        <div id="emailHelp" class="form-text">Separate the technologies using a comma ( , ).</div>
+                    </div>
                 </div>
-                <div class="col-sm from-group">
-                    <label for="disabledTextInput" class="form-label">Users</label>
-                    <input class="form-control" id="disabledInput" type="text" placeholder="Option not available at the moment" disabled>
+                <div class="buttons-group">
+                    <button type="submit" class="btn btn-dark btn-custom">Add project</button>
                 </div>
-            </div>
-            <div class="row input-row">
-                <div class="col-sm">
-                    <label class="form-label">Description</label>
-                    <textarea class="form-control" id="textAreaExample3" rows="2"></textarea>
-                </div>
-                <div class="col-sm">
-                    <label class="form-label">Technologies</label>
-                    <textarea class="form-control" id="textAreaExample3" rows="2"></textarea>
-                    <div id="emailHelp" class="form-text">Separate the technologies using a comma ( , ).</div>
-                </div>
-            </div>
-
-        </div>
-        <div class="buttons-group">
-            <button type="button" class="btn btn-dark btn-custom">Add project</button>
+            </form>
         </div>
     </div>
 </body>
