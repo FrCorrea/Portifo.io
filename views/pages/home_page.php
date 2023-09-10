@@ -1,7 +1,7 @@
 <?php
     session_start();
 
-    if(empty($_SESSION['loggin']) || !$_SESSION['loggin']){
+    if(empty($_SESSION['logged_in']) || !$_SESSION['logged_in']){
         echo "entrou";
         header('Location: login_page.php');
     }
@@ -34,7 +34,29 @@
 
   <?php require('../components/header.php') ?>
   <?php require('../components/aside.php') ?>
-  <?php require('../components/projects_container.php') ?>
+
+  <div class="projects-container">
+    <div class="projects-header">
+        <h3 class="projects-title"><i>Projects</i></h3>
+        <button type="button" class="btn btn-dark"> <a href="add_project_page.php"> Add Project </a> </button>
+    </div>
+    <div class="websites-projects-container">
+        <h4 class="websites-projects-title">Websites</h4>
+        <div class="projects-carousel">
+            <?php include('../components/websites_carousel.php') ?>
+        </div>
+
+        <h4 class="websites-projects-title">Apps</h4>
+        <div class="projects-carousel">
+            <?php include('../components/websites_carousel.php') ?>
+        </div>
+
+        <h4 class="websites-projects-title">Designs</h4> 
+        <div class="projects-carousel">
+            <?php include('../components/websites_carousel.php') ?>
+        </div>
+    </div>
+</div>
   <button type="button" class="btn btn-primary"> <a href="logout.php">Logout</a></button>
 </body>
 
