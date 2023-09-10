@@ -1,17 +1,10 @@
+
 <?php
-    $email = $_POST['email'] ?? '';
-    $password = $_POST['password'] ?? '';
-    $error = false;
+// Verifique se há uma mensagem de erro na URL
+if (isset($_GET['error'])) {
+    $error = "Senha ou email inválidos!";
+}
 
-    session_start();
-
-    if($email == 'admin@gmail.com' && $password == '12345'){
-        $_SESSION['loggin'] = true;
-        $_SESSION['email'] = $email;
-        header('Location: home_page.php');
-    } elseif (!empty($_POST)){
-        $error = true;
-    }
 ?>
 
 <?php include('../components/header.php') ?>
@@ -48,7 +41,7 @@
     </div>
     <h1 class="create-account-text">Login</h1>
     <div class="form-box">
-        <form method="POST" action="login_page.php">
+        <form method="POST" action="../controllers/LoginController.php">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
@@ -60,7 +53,7 @@
             </div>
             <?php if($error): ?>
                 <div class="alert alert-danger">
-                    Invalid email or password!
+                    <?php echo $error; ?>
                 </div>
             <?php endif; ?>
             <button type="submit" class="btn btn-dark btn-create">Enter</button>
