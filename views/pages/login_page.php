@@ -4,7 +4,9 @@
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
 }
-
+if (isset($_GET['sucess'])) {
+    $sucess = $_GET['sucess'];
+}
 ?>
 
 <?php include('../components/header.php') ?>
@@ -49,8 +51,12 @@ if (isset($_GET['error'])) {
             <div class="mb-3">
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                <div id="password-help" class="form-text">Must be at least 6 characters and contain a number.</div>
             </div>
+            <?php if($sucess): ?>
+                <div class="alert alert-danger">
+                    <?php echo $sucess; ?>
+                </div>
+            <?php endif; ?>
             <?php if($error): ?>
                 <div class="alert alert-danger">
                     <?php echo $error; ?>
