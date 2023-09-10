@@ -8,13 +8,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
-    if (strpos($email, '@') == false) {
-        header('Location: ../views/pages/login_page.php?error=Email deve possuir @');
+    if ($email === '' || $password === '') {
+        header('Location: ../views/pages/login_page.php?error=Preencha todos os campos');
         exit; // Certifique-se de sair do script após o redirecionamento.
     }
 
-    if (strlen($password) < 6) {
-        header('Location: ../views/pages/login_page.php?error=Senha insuficiente');
+    if (strpos($email, '@') == false) {
+        header('Location: ../views/pages/login_page.php?error=Email deve possuir @');
         exit; // Certifique-se de sair do script após o redirecionamento.
     }
 

@@ -1,3 +1,10 @@
+<?php
+// Verifique se há uma mensagem de erro na URL
+if (isset($_GET['error'])) {
+    $error = $_GET['error'];
+}
+?>
+
 <?php include('../components/header.php') ?>
 <?php include('../components/footer.php') ?>
 
@@ -33,20 +40,25 @@
     </div>
     <h1 class="create-account-text">Create an account</h1>
     <div class="form-box">
-        <form>
+        <form method="POST" action="../../controllers/RegisterController.php">
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label" name="name">Name</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label">Name</label>
+                <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
             </div>
             <div class="mb-3">
-                <label for="exampleInputEmail1" class="form-label" name="email">Email</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <label for="exampleInputEmail1" class="form-label" >Email</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
             </div>
             <div class="mb-3">
-                <label for="exampleInputPassword1" class="form-label" name="password">Password</label>
-                <input type="password" class="form-control" id="exampleInputPassword1">
+                <label for="exampleInputPassword1" class="form-label" >Password</label>
+                <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                 <div id="password-help" class="form-text">Must be at least 6 characters and contain a number.</div>
             </div>
+            <?php if($error): ?>
+                <div class="alert alert-danger">
+                    <?php echo $error; ?>
+                </div>
+            <?php endif; ?>
             <button type="submit" class="btn btn-dark btn-create">Create Account</button>
         </form>
     </div>
