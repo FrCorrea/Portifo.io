@@ -64,7 +64,7 @@
                 </div>
             <?php endif; ?>
             <button type="submit" class="btn btn-dark btn-create">Enter</button>
-            <button type="button" class="btn btn-dark btn-create"> <a href="registe_page.php">Register</a></button>
+            <button type="button" class="btn btn-dark btn-create"> <a href="register_page.php">Register</a></button>
         </form>
     </div>
 </div>
