@@ -1,9 +1,14 @@
+<?php
+    session_start();
+?>
 <div class="aside-container">
     <div class="img-container">
         <img src="../assets/clipboard.png" alt="" class="profile-img">
     </div>
     <div class="profile-header">
-        <h3 class="profile-name"><b>Amanda Rodrigues Vieira</b></h1>
+        <h3 class="profile-name"><b>
+            <?php echo $_SESSION['user_name'] ?? '' ?>
+        </b></h1>
         <h5 class="role">Software Engineer</h5>
     </div>
     <div class="profile-information">

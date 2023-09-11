@@ -51,7 +51,7 @@
             <?php include('../components/websites_carousel.php') ?>
         </div>
 
-        <h4 class="websites-projects-title">Designs</h4> 
+        <h4 class="websites-projects-title">Designs</h4>
         <div class="projects-carousel">
             <?php include('../components/websites_carousel.php') ?>
         </div>
