@@ -7,7 +7,7 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="views/pages/websites_page.php">Websites</a>
+          <a class="nav-link" href="websites_page.php">Websites</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="apps_page.php">Apps</a>
