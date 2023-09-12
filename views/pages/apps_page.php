@@ -5,7 +5,6 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     echo "entrou";
     header('Location: login_page.php');
 }
-
 ?>
 
 <!doctype html>
