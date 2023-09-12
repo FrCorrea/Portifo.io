@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         header('Location: ../views/pages/add_project_page.php?error=Os campos de nome e tipo não podem ser vazios.');
         exit;
     } else {
-        header('Location: ../views/pages/home_page.php');
+        header('Location: ../views/pages/websites.php');
     }
 }
 ?>
