@@ -31,7 +31,7 @@
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
             <button type="button" class="btn btn-dark btn-floating btn-back-custom">
-                <a href="home_page.php">
+                <a href="websites_page.php">
                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
                 </a>
             </button>
