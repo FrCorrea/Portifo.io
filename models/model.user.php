@@ -141,6 +141,20 @@ $users = [
                 'type' => 'app',
                 'githubLink' => 'Link do GitHub do Projeto 18',
                 'technologies' => ['Tecnologia 35', 'Tecnologia 36']
+            ],
+            [
+                'name' => 'Projeto 19',
+                'description' => 'Descrição do Projeto 19',
+                'type' => 'app',
+                'githubLink' => 'Link do GitHub do Projeto 19',
+                'technologies' => ['Tecnologia 35', 'Tecnologia 36']
+            ],
+            [
+                'name' => 'Projeto 20',
+                'description' => 'Descrição do Projeto 20',
+                'type' => 'app',
+                'githubLink' => 'Link do GitHub do Projeto 20',
+                'technologies' => ['Tecnologia 35', 'Tecnologia 36']
             ]
         ]
     ]

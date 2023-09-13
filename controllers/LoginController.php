@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_name'] = $userName;
         $_SESSION['user_email'] = $userEmail;
         $_SESSION['logged_in'] = true;
-        header('Location: ../views/pages/websites_page.php'); // Redireciona para a área protegida
+        header('Location: ../views/pages/home_page.php'); // Redireciona para a área protegida
     } else {
         header('Location: ../views/pages/login_page.php?error=Usuário ou senha inválidos');
     }

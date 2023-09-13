@@ -7,13 +7,22 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="websites_page.php">Websites</a>
+          <form method="POST" action="../../controllers/ShowProjectsController.php">
+            <input type="hidden" name="type" id="website" value="website">
+            <button type="submit" class="btn btn-dark btn-create" value="website">Website</button>
+          </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="apps_page.php">Apps</a>
+          <form method="POST" action="../../controllers/ShowProjectsController.php">
+            <input type="hidden" name="type" id="app" value="app">
+            <button type="submit" class="btn btn-dark btn-create" value="app">Applications</button>
+          </form>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="designs_page.php">Designs</a>
+          <form method="POST" action="../../controllers/ShowProjectsController.php">
+            <input type="hidden" name="type" id="design" value="design">
+            <button type="submit" class="btn btn-dark btn-create" value="design">Designs</button>
+          </form>
         </li>
       </ul>
     </div>

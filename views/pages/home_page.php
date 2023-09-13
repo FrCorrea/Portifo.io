@@ -35,8 +35,11 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <?php include('../components/aside.php') ?>
 
     <div class="projects-container">
+        
         <div class="projects-header">
-            <h3 class="projects-title"><i>Websites</i></h3>
+            <h3 class="projects-title"><i>
+            <?php echo $_SESSION['type'] ?? '' ?>    
+            <i></h3>
             <button type="button" class="btn btn-dark" onclick="location.href = 'add_project_page.php';">Add Project</button>
 
         </div>

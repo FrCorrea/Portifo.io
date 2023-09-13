@@ -113,6 +113,7 @@
 
 .projects-title {
     font-size: 35px;
+    text-transform: uppercase;
 }
 
 .projects-container {
@@ -189,4 +190,13 @@
 
 .education-container {
     margin-top: 1rem;
+}
+
+.cards-container {
+    justify-content: space-between;
+    display: flex;
+}
+
+.project-card {
+    width: 23rem;
 }
