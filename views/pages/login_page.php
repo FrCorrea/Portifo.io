@@ -8,6 +8,7 @@ if (isset($_GET['sucess'])) {
     $sucess = $_GET['sucess'];
 }
 ?>
+<!-- ADICIONAR BASE_PATH -->
 
 <?php include('views/components/header.php') ?>
 
@@ -52,7 +53,7 @@ if (isset($_GET['sucess'])) {
                 <label for="exampleInputPassword1" class="form-label">Password</label>
                 <input type="password" class="form-control" id="exampleInputPassword1" name="password">
             </div>
-            <?php if($sucess): ?>
+            <!-- <?php if($sucess): ?>
                 <div class="alert alert-danger">
                     <?php echo $sucess; ?>
                 </div>
@@ -61,9 +62,9 @@ if (isset($_GET['sucess'])) {
                 <div class="alert alert-danger">
                     <?php echo $error; ?>
                 </div>
-            <?php endif; ?>
+            <?php endif; ?> -->
             <button type="submit" class="btn btn-dark btn-create">Enter</button>
-            <button type="button" class="btn btn-dark btn-create"> <a href="register_page.php">Register</a></button>
+            <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'register_page.php';">Register</button>
         </form>
     </div>
 </div>

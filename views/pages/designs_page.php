@@ -42,7 +42,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
         </div>
         <div class="websites-projects-container">
             <div class="projects-carousel">
-                <?php include('views/components/websites_carousel.php') ?>
+                <?php include('../components/websites_carousel.php') ?>
             </div>
         </div>
     </div>

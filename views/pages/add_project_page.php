@@ -1,5 +1,15 @@
-<?php include('views/components/header.php') ?>
-<?php include('views/components/aside.php') ?>
+
+<?php
+session_start();
+
+if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+    echo "entrou";
+    header('Location: login_page.php');
+}
+?>
+
+<?php include('../components/header.php') ?>
+<?php include('../components/aside.php') ?>
 
 <!doctype html>
 
@@ -11,7 +21,7 @@
 
     <title>Login - Portifo.io</title>
 
-    <link rel="stylesheet" type="text/css" href=views/assets/style.css>
+    <link rel="stylesheet" type="text/css" href=../assets/style.css>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -30,10 +40,8 @@
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
-            <button type="button" class="btn btn-dark btn-floating btn-back-custom">
-                <a href="websites_page.php">
+            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = 'websites_page.php';">
                     <i class="fa fa-arrow-left" aria-hidden="true"></i>
-                </a>
             </button>
         </div>
         <div class="project-inputs">

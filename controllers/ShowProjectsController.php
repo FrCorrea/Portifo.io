@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['type']) && isset($userId)) {
         $type = $_POST['type'];
     
-        // Encontre o usuário com base no userId
+        // Encontra o usuário com base no userId
         $user = null;
         foreach ($users as $user) {
             if ($user['id'] === $userId) {
