@@ -3,13 +3,12 @@
 session_start();
 
 if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    echo "entrou";
     header('Location: login_page.php');
 }
 ?>
 
-<?php include('../components/header.php') ?>
-<?php include('../components/aside.php') ?>
+<?php include('/Portifo.io/views/components/header.php') ?>
+<?php include('/Portifo.io/views/components/aside.php') ?>
 
 <!doctype html>
 
@@ -45,7 +44,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="controllers/ProjectController.php">
+            <form method="POST" action="/Portifo.io/controllers/ProjectController.php">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
