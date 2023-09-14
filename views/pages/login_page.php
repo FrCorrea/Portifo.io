@@ -1,18 +1,17 @@
 
 <?php
 
-$_COOKIE['contadorEntradas'] = 1;
 // Verifique se há uma mensagem de erro na URL
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
 }
 if (isset($_GET['sucess'])) {
-    $sucess = $_GET['sucess'];
+    $success = $_GET['sucess'];
 }
 
 ?>
 
-<?php include $raiz.'Portifo.io/views/components/header.php' ?>
+<?php include '/Portifo.io/views/components/header.php' ?>
 
 <!doctype html>
 
@@ -24,7 +23,7 @@ if (isset($_GET['sucess'])) {
 
   <title>Login - Portifo.io</title>
 
-  <link rel="stylesheet" type="text/css" href= "/Portifo.io/views/assets/style.css" ?> >
+  <link rel="stylesheet" type="text/css" href= "/Portifo.io/views/assets/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

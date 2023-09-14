@@ -3,7 +3,7 @@
 session_start();
 
 if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: login_page.php');
+    header('Location: /Portifo.io/views/pages/login_page.php');
 }
 ?>
 
@@ -20,7 +20,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
     <title>Login - Portifo.io</title>
 
-    <link rel="stylesheet" type="text/css" href=../assets/style.css>
+    <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css ">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
