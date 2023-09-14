@@ -11,11 +11,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $description = $_POST['description'];
     $technologies = $_POST['technologies'];
 
-    if (!($name) || !($type)) {
+    if (!($name) || !($type) || ($type == "Select the project type")) {
         header('Location: /Portifo.io/views/pages/add_project_page.php?error=Os campos de nome e tipo não podem ser vazios.');
         exit;
     } else {
-        header('Location: /Portifo.io/views/pages/home_page.php');
+        header('Location: /Portifo.io/views/pages/home_page.php?success=Projeto adicionado com sucesso.');
     }
 }
 ?>

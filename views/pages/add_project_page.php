@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -6,9 +5,6 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     header('Location: /Portifo.io/views/pages/login_page.php');
 }
 ?>
-
-<?php include('/Portifo.io/views/components/header.php') ?>
-<?php include('/Portifo.io/views/components/aside.php') ?>
 
 <!doctype html>
 
@@ -18,7 +14,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login - Portifo.io</title>
+    <title>Portfol.io | Add Project</title>
 
     <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css ">
 
@@ -36,15 +32,18 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
+    <?php include('../components/header.php') ?>
+    <?php include('../components/aside.php') ?>
+
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
             <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = 'home_page.php';">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="/Portifo.io/controllers/ProjectController.php">
+            <form method="POST" action="/Portifo.io/controllers/AddProjectController.php">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
@@ -81,6 +80,31 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                         <div id="emailHelp" class="form-text">Separate the technologies using a comma ( , ).</div>
                     </div>
                 </div>
+
+                <?php
+                $error = null;
+                $success = null;
+                
+                if (isset($_GET['error'])) {
+                    $error = $_GET['error'];
+                }
+                if (isset($_GET['success'])) {
+                    $success = $_GET['success'];
+                }
+
+                if ($success) { 
+                    echo '<div class="alert alert-success">';
+                    echo $success;
+                    echo '</div>';
+                }
+
+                if ($error) {
+                    echo '<div class="alert alert-danger">';
+                        echo $error;
+                    echo '</div>';
+                }
+                ?>
+                   
                 <div class="buttons-group">
                     <button type="submit" class="btn btn-dark btn-custom">Add project</button>
                 </div>

@@ -44,6 +44,6 @@
             'password' => $password,
             'projects' => []
         ]);
-        header('Location: /Portifo.io/views/pages/login_page.php?success=Usuário cadastrado com sucesso');
+        header('Location: /Portifo.io/?success=Usuário cadastrado com sucesso');
     }
 ?>
