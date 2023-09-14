@@ -43,10 +43,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_name'] = $userName;
         $_SESSION['user_email'] = $userEmail;
         $_SESSION['logged_in'] = true;
-        $caminho =  '/Portifo.io/views/pages/home_page.php?error=Email inválido';
+        $caminho =  '/Portifo.io/views/pages/home_page.php';
         header('Location: ' . $caminho);
     } else {
-        $caminho =  '/Portifo.io/views/pages/login_page.php?error=Email ou senha inválidos';
+        $caminho =  '/Portifo.io/?error=Email ou senha inválidos';
         header('Location: ' . $caminho);
     }
 }
