@@ -8,67 +8,67 @@ $users = [
         'password' => '123456',
         'projects' => [
             [
-                'name' => 'Projeto 1',
-                'description' => 'Descrição do Projeto 1',
+                'name' => 'Design 1',
+                'description' => 'This is a cool design sheet.',
                 'type' => 'design',
-                'githubLink' => 'Link do GitHub do Projeto 1',
-                'technologies' => ['Tecnologia 1', 'Tecnologia 2']
+                'githubLink' => 'Link do GitHub do Design 1',
+                'technologies' => ['Figma', 'Photoshop']
             ],
             [
-                'name' => 'Projeto 2',
-                'description' => 'Descrição do Projeto 2',
+                'name' => 'Design 2',
+                'description' => 'This is another nice design sheet.',
                 'type' => 'design',
-                'githubLink' => 'Link do GitHub do Projeto 2',
-                'technologies' => ['Tecnologia 3', 'Tecnologia 4']
+                'githubLink' => 'Link do GitHub do Design 2',
+                'technologies' => ['Adobe Illustrator', 'Figma']
             ],
             [
-                'name' => 'Projeto 3',
-                'description' => 'Descrição do Projeto 3',
+                'name' => 'Design 3',
+                'description' => 'A different and nice design sheet.',
                 'type' => 'design',
-                'githubLink' => 'Link do GitHub do Projeto 3',
-                'technologies' => ['Tecnologia 5', 'Tecnologia 6']
+                'githubLink' => 'Link do GitHub do Design 3',
+                'technologies' => ['Adobe After Effects']
             ],
             [
-                'name' => 'Projeto 4',
-                'description' => 'Descrição do Projeto 4',
+                'name' => 'Website 1',
+                'description' => 'A good website.',
                 'type' => 'website',
-                'githubLink' => 'Link do GitHub do Projeto 4',
-                'technologies' => ['Tecnologia 7', 'Tecnologia 8']
+                'githubLink' => 'Link do GitHub do Website 1',
+                'technologies' => ['React', 'Node']
             ],
             [
-                'name' => 'Projeto 5',
-                'description' => 'Descrição do Projeto 5',
+                'name' => 'Website 2',
+                'description' => 'Another cool website.',
                 'type' => 'website',
-                'githubLink' => 'Link do GitHub do Projeto 5',
-                'technologies' => ['Tecnologia 9', 'Tecnologia 10']
+                'githubLink' => 'Link do GitHub do Website 5',
+                'technologies' => ['Node', 'Javascript']
             ],
             [
-                'name' => 'Projeto 6',
-                'description' => 'Descrição do Projeto 6',
+                'name' => 'Website 3',
+                'description' => 'A different and cool website.',
                 'type' => 'website',
-                'githubLink' => 'Link do GitHub do Projeto 6',
-                'technologies' => ['Tecnologia 11', 'Tecnologia 12']
+                'githubLink' => 'Link do GitHub do Website 6',
+                'technologies' => ['Typescript', 'Java']
             ],
             [
-                'name' => 'Projeto 7',
-                'description' => 'Descrição do Projeto 7',
+                'name' => 'Application 1',
+                'description' => 'A nice application.',
                 'type' => 'app',
-                'githubLink' => 'Link do GitHub do Projeto 7',
-                'technologies' => ['Tecnologia 13', 'Tecnologia 14']
+                'githubLink' => 'Link do GitHub do Application 7',
+                'technologies' => ['Java']
             ],
             [
-                'name' => 'Projeto 8',
-                'description' => 'Descrição do Projeto 8',
+                'name' => 'Application 2',
+                'description' => 'Another cool application.',
                 'type' => 'app',
-                'githubLink' => 'Link do GitHub do Projeto 8',
-                'technologies' => ['Tecnologia 15', 'Tecnologia 16']
+                'githubLink' => 'Link do GitHub do Application 8',
+                'technologies' => ['Python']
             ],
             [
-                'name' => 'Projeto 9',
-                'description' => 'Descrição do Projeto 9',
+                'name' => 'Application 3',
+                'description' => 'A different and nice application.',
                 'type' => 'app',
-                'githubLink' => 'Link do GitHub do Projeto 9',
-                'technologies' => ['Tecnologia 17', 'Tecnologia 18']
+                'githubLink' => 'Link do GitHub do Application 9',
+                'technologies' => ['Java', 'Spring Boot']
             ]
         ]
     ],
