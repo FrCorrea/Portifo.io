@@ -6,9 +6,6 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 }
 ?>
 
-<?php include('/Portifo.io/views/components/header.php') ?>
-<?php include('/Portifo.io/views/components/aside.php') ?>
-
 <!doctype html>
 
 <html lang="en">
@@ -35,6 +32,9 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
+    <?php include('../components/header.php') ?>
+    <?php include('../components/aside.php') ?>
+    
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>

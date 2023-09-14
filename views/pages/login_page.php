@@ -1,5 +1,3 @@
-<?php include '/Portifo.io/views/components/header.php' ?>
-
 <!doctype html>
 
 <html lang="en">
@@ -25,6 +23,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
+    <?php include('views/components/header.php') ?>
+    <?php include('views/components/footer.php') ?>
+    
     <div class="login-container">
         <div class="welcome-box">
             <h2 class="title-welcome">Welcome to</h2>
@@ -37,11 +38,6 @@
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
                 </div>
-                <div class="mb-3">
-                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="password">
-                </div>
-
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
@@ -71,7 +67,7 @@
                 ?>
                 <div class="login-buttons-group">
                     <button type="submit" class="btn btn-dark btn-create">Enter</button>
-                    <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'register_page.php';">Register</button>
+                    <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'views/pages/register_page.php';">Register</button>
                 </div>
             </form>
         </div>
@@ -79,7 +75,6 @@
     </div>
     <img src="/Portifo.io/views/assets/clipboard.png" alt="" class="img-clipboard">
     <img src="/Portifo.io/views/assets/pointer.png" alt="" class="img-pointer">
-    <?php include "/Portifo.io/views/components/footer.php"; ?>
 </body>
 
 </html>
