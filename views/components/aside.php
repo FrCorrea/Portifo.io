@@ -10,13 +10,12 @@
     </div>
     <div class="profile-information">
         <div class="technologies-container">
-            <h5 class="technologies">Technologies</h4>
-                <span class="badge bg-secondary">Typescript</span>
-            </h5>
-            <span class="badge bg-secondary">Node</span></h5>
-            <span class="badge bg-secondary">React</span></h5>
-            <span class="badge bg-secondary">Angular</span></h5>
-            <span class="badge bg-secondary">Java</span></h5>
+            <h5 class="technologies">Technologies</h5>
+            <span class="badge bg-secondary">Typescript</span>
+            <span class="badge bg-secondary">Node</span>
+            <span class="badge bg-secondary">React</span>
+            <span class="badge bg-secondary">Angular</span>
+            <span class="badge bg-secondary">Java</span>
         </div>
 
         <div class="general-info-container">
@@ -30,13 +29,13 @@
             <h5 class="aside__education">Education</h5>
             <div class="card border-light education-card">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <h6 class="card-subtitle mb-2 text-body-secondary">Card subtitle</h6>
-                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <h5 class="card-title">Universidade Tecnológica Federal do Paraná</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary">2019 - 2024</h6>
+                    <p class="card-text"><b>Related coursework:</b> Algorithms, Neural Networks, AI, Optimization, Time/Space Complexity.</p>
                 </div>
             </div>
-            
+
         </div>
     </div>
-    
+
 </div>
