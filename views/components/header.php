@@ -7,19 +7,19 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <form method="POST" action="../../controllers/ShowProjectsController.php">
+          <form method="POST" action="/Portifo.io/controllers/ShowProjectsController.php">
             <input type="hidden" name="type" id="website" value="website">
             <button type="submit" class="btn btn-dark btn-create" value="website">Website</button>
           </form>
         </li>
         <li class="nav-item">
-          <form method="POST" action="../../controllers/ShowProjectsController.php">
+          <form method="POST" action="/Portifo.io/controllers/ShowProjectsController.php">
             <input type="hidden" name="type" id="app" value="app">
             <button type="submit" class="btn btn-dark btn-create" value="app">Applications</button>
           </form>
         </li>
         <li class="nav-item">
-          <form method="POST" action="../../controllers/ShowProjectsController.php">
+          <form method="POST" action="/Portifo.io/controllers/ShowProjectsController.php">
             <input type="hidden" name="type" id="design" value="design">
             <button type="submit" class="btn btn-dark btn-create" value="design">Designs</button>
           </form>
