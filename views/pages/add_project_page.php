@@ -1,4 +1,3 @@
-
 <?php
 session_start();
 
@@ -41,11 +40,11 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
             <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = 'home_page.php';">
-                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="controllers/ProjectController.php">
+            <form method="POST" action="../../controllers/AddProjectController.php">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
@@ -82,6 +81,31 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
                         <div id="emailHelp" class="form-text">Separate the technologies using a comma ( , ).</div>
                     </div>
                 </div>
+
+                <?php
+                $error = null;
+                $success = null;
+                
+                if (isset($_GET['error'])) {
+                    $error = $_GET['error'];
+                }
+                if (isset($_GET['success'])) {
+                    $success = $_GET['success'];
+                }
+
+                if ($success) { 
+                    echo '<div class="alert alert-success">';
+                    echo $success;
+                    echo '</div>';
+                }
+
+                if ($error) {
+                    echo '<div class="alert alert-danger">';
+                        echo $error;
+                    echo '</div>';
+                }
+                ?>
+                   
                 <div class="buttons-group">
                     <button type="submit" class="btn btn-dark btn-custom">Add project</button>
                 </div>
