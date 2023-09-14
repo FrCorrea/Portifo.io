@@ -8,8 +8,9 @@ if (isset($_GET['sucess'])) {
     $sucess = $_GET['sucess'];
 }
 ?>
+<!-- ADICIONAR BASE_PATH -->
 
-<?php include('../components/header.php') ?>
+<?php include('views/components/header.php') ?>
 
 <!doctype html>
 
@@ -21,7 +22,7 @@ if (isset($_GET['sucess'])) {
 
   <title>Login - Portifo.io</title>
 
-  <link rel="stylesheet" type="text/css" href="../assets/style.css">
+  <link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -63,13 +64,13 @@ if (isset($_GET['sucess'])) {
                 </div>
             <?php endif; ?>
             <button type="submit" class="btn btn-dark btn-create">Enter</button>
-            <button type="button" class="btn btn-dark btn-create"> <a href="register_page.php">Register</a></button>
+            <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'register_page.php';">Register</button>
         </form>
     </div>
 </div>
-<img src="../assets/clipboard.png" alt="" class="img-clipboard">
-    <img src="../assets/pointer.png" alt="" class="img-pointer">
-    <?php include('../components/footer.php') ?>
+<img src="views/assets/clipboard.png" alt="" class="img-clipboard">
+    <img src="views/assets/pointer.png" alt="" class="img-pointer">
+    <?php include('views/components/footer.php') ?>
 </body>
 
 </html>

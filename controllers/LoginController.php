@@ -27,6 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $emailFound = true;
             $userId = $user['id'];
             $userName = $user['name'];
+            $userEmail = $user['email'];
             break; // Saia do loop assim que encontrar o email
         }
     }
@@ -35,6 +36,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Autenticação bem-sucedida, defina uma variável de sessão para marcar o usuário como logado
         $_SESSION['user_id'] = $userId;
         $_SESSION['user_name'] = $userName;
+        $_SESSION['user_email'] = $userEmail;
         $_SESSION['logged_in'] = true;
         header('Location: ../views/pages/home_page.php'); // Redireciona para a área protegida
     } else {
