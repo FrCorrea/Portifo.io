@@ -14,7 +14,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>Login - Portifo.io</title>
+    <title>Portfol.io | Add Project</title>
 
     <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css ">
 
@@ -34,7 +34,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
     <?php include('../components/header.php') ?>
     <?php include('../components/aside.php') ?>
-    
+
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
