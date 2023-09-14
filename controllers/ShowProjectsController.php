@@ -34,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             echo json_encode($filteredProjects);
             $_SESSION['filtered_projects'] = json_encode($filteredProjects);
             $_SESSION['type'] = $type;
-            header('Location: ../views/pages/home_page.php'); // Redireciona para a área protegida
+            header('Location: /Portifo.io/views/pages/home_page.php'); // Redireciona para a área protegida
         } else {
             // Retorna uma mensagem de erro se o usuário não for encontrado
             header('HTTP/1.1 404 Not Found');

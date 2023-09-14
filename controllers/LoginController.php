@@ -3,18 +3,23 @@ session_start();
 
 include '../models/model.user.php';
 
+$raiz = $_SERVER['DOCUMENT_ROOT'] . DIRECTORY_SEPARATOR;
+
 // Verifica se o formulário foi submetido
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $email = $_POST['email'];
     $password = $_POST['password'];
 
     if ($email === '' || $password === '') {
-        header('Location: ../views/pages/login_page.php?error=Preencha todos os campos');
+        $caminho =  '/Portifo.io/views/pages/login_page.php?error=Preencha todos os campos';
+        header('Location: ' . $caminho);
         exit; // Certifique-se de sair do script após o redirecionamento.
     }
 
     if (strpos($email, '@') == false) {
-        header('Location: ../views/pages/login_page.php?error=Email deve possuir @');
+        $caminho = '/Portifo.io//views/pages/login_page.php?error=Email inválido';
+        header('Location: ' . $caminho);
+        $_COOKIE['contadorEntradas'] += 1;
         exit; // Certifique-se de sair do script após o redirecionamento.
     }
 
@@ -38,9 +43,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $_SESSION['user_name'] = $userName;
         $_SESSION['user_email'] = $userEmail;
         $_SESSION['logged_in'] = true;
-        header('Location: ../views/pages/home_page.php'); // Redireciona para a área protegida
+        $caminho =  '/Portifo.io/views/pages/home_page.php?error=Email inválido';
+        header('Location: ' . $caminho);
     } else {
-        header('Location: ../views/pages/login_page.php?error=Usuário ou senha inválidos');
+        $caminho =  '/Portifo.io/views/pages/login_page.php?error=Email ou senha inválidos';
+        header('Location: ' . $caminho);
     }
 }
 

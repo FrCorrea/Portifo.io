@@ -5,8 +5,8 @@ if (isset($_GET['error'])) {
 }
 ?>
 
-<?php include('../components/header.php') ?>
-<?php include('../components/footer.php') ?>
+<?php include('/Portifo.io/views/components/header.php') ?>
+<?php include('/Portifo.io/views//components/footer.php') ?>
 
 <!doctype html>
 
@@ -18,7 +18,7 @@ if (isset($_GET['error'])) {
 
   <title>Login - Portifo.io</title>
 
-  <link rel="stylesheet" type="text/css" href="../assets/style.css">
+  <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -40,7 +40,7 @@ if (isset($_GET['error'])) {
     </div>
     <h1 class="create-account-text">Create an account</h1>
     <div class="form-box">
-        <form method="POST" action="../../controllers/RegisterController.php">
+        <form method="POST" action="/Portifo.io/controllers/RegisterController.php">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Name</label>
                 <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
@@ -64,8 +64,8 @@ if (isset($_GET['error'])) {
     </div>
 </div>
 
-<img src="../assets/clipboard.png" alt="" class="img-clipboard">
-<img src="../assets/pointer.png" alt="" class="img-pointer">
+<img src="/Portifo.io/views/assets/clipboard.png" alt="" class="img-clipboard">
+<img src="/Portifo.io/views/assets/pointer.png" alt="" class="img-pointer">
 </body>
 
 </html>

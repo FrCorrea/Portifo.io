@@ -1,5 +1,7 @@
 
 <?php
+
+$_COOKIE['contadorEntradas'] = 1;
 // Verifique se há uma mensagem de erro na URL
 if (isset($_GET['error'])) {
     $error = $_GET['error'];
@@ -7,10 +9,10 @@ if (isset($_GET['error'])) {
 if (isset($_GET['sucess'])) {
     $sucess = $_GET['sucess'];
 }
-?>
-<!-- ADICIONAR BASE_PATH -->
 
-<?php include('views/components/header.php') ?>
+?>
+
+<?php include $raiz.'Portifo.io/views/components/header.php' ?>
 
 <!doctype html>
 
@@ -22,7 +24,7 @@ if (isset($_GET['sucess'])) {
 
   <title>Login - Portifo.io</title>
 
-  <link rel="stylesheet" type="text/css" href="views/assets/style.css">
+  <link rel="stylesheet" type="text/css" href= "/Portifo.io/views/assets/style.css" ?> >
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -44,7 +46,7 @@ if (isset($_GET['sucess'])) {
     </div>
     <h1 class="create-account-text">Login</h1>
     <div class="form-box">
-        <form method="POST" action="controllers/LoginController.php">
+        <form method="POST" action="/Portifo.io/controllers/LoginController.php">
             <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email</label>
                 <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
@@ -68,9 +70,9 @@ if (isset($_GET['sucess'])) {
         </form>
     </div>
 </div>
-<img src="views/assets/clipboard.png" alt="" class="img-clipboard">
-    <img src="views/assets/pointer.png" alt="" class="img-pointer">
-    <?php include('views/components/footer.php') ?>
+<img src= "/Portifo.io/views/assets/clipboard.png" alt="" class="img-clipboard">
+<img src= "/Portifo.io/views/assets/pointer.png" alt="" class="img-pointer">
+<?php include "/Portifo.io/views/components/footer.php"; ?>
 </body>
 
 </html>
