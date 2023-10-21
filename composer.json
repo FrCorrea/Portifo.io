@@ -1,0 +1,14 @@
+{
+    "name": "amand/portifo.io",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Skyerv",
+            "email": "amanda@manzoti.com"
+        }
+    ],
+    "autoload": {
+        "classmap": ["./"]
+    },
+    "require": {}
+}
