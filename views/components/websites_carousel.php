@@ -1,9 +1,7 @@
 <section class="pt-5 pb-5">
 	<div class="cards-container">
 		<?php
-		if (isset($_SESSION['filtered_projects'])) {
-			$filteredProjectsString = $_SESSION['filtered_projects'];
-			$filteredProjects = json_decode($filteredProjectsString);
+			$filteredProjects = json_decode($filteredProjects);
 
 			foreach ($filteredProjects as $project) {
 				echo '    <div class="card project-card">';
@@ -19,9 +17,6 @@
 				echo '            </div>';
 				echo '    </div>';
 			}
-		} else {
-			echo 'No filtered projects found.';
-		}
 		?>
 	</div>
 </section>
