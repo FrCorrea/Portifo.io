@@ -1,4 +1,7 @@
 <?php
+
+namespace Portifoio\controllers;
+
 session_start();
 
 class LoginController {
