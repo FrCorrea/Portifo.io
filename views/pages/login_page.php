@@ -25,7 +25,7 @@
 
     <?php include('../components/header.php') ?>
     <?php include('../components/footer.php') ?>
-    
+
     <div class="login-container">
         <div class="welcome-box">
             <h2 class="title-welcome">Welcome to</h2>
@@ -33,7 +33,7 @@
         </div>
         <h1 class="create-account-text">Login</h1>
         <div class="form-box">
-            <form method="POST" action="UserController@login">
+            <form method="POST" action="/login">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">
@@ -66,7 +66,7 @@
                 }
                 ?>
                 <div class="login-buttons-group">
-                    <button type="submit" class="btn btn-dark btn-create" href='/login/'>Enter</button>
+                    <button type="submit" class="btn btn-dark btn-create" onclick="location.href = 'views/pages/home_page.php';">Enter</button>
                     <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'views/pages/register_page.php';">Register</button>
                 </div>
             </form>
