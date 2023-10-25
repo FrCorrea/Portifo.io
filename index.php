@@ -1,1 +1,1 @@
-<?php require('views/pages/login_page.php');?>
+<?php require('views/pages/welcome_page.php');?>

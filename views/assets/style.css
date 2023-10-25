@@ -10,11 +10,21 @@
 
 .footer-default {
     position: fixed;
+    z-index: 1000;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
     font-family: 'IBM Plex Sans Condensed', sans-serif;
+}
+
+.btn-edit {
+    width: 15%;
+    float: right;
+    position: absolute;
+    z-index: 1000;
+    right: 0;
+    margin: 0.3rem;
 }
 
 .login-container {
@@ -165,10 +175,6 @@
     margin-bottom: 1rem;
 }
 
-.float_l {
-    
-}
-
 .btn-logout  {
     text-decoration: none;
     position: fixed;
@@ -235,4 +241,17 @@
 .header-profile-img {
     margin-left: 1rem;
     width: 2.5rem;
+}
+
+.welcome-container {
+    display: flex;
+    justify-content: center;
+}
+
+.welcome-center-container {
+    margin: 0 auto;
+}
+
+.navbar-public {
+    gap: 1rem;
 }
