@@ -16,7 +16,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
     <title>Portfol.io | Add Project</title>
 
-    <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css ">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css ">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

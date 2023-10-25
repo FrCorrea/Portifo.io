@@ -8,7 +8,7 @@
 
     <title>Portfol.io | Register</title>
 
-    <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,8 +75,8 @@
         </div>
     </div>
 
-    <img src="/Portifo.io/views/assets/clipboard.png" alt="" class="img-clipboard">
-    <img src="/Portifo.io/views/assets/pointer.png" alt="" class="img-pointer">
+    <img src="../assets/clipboard.png" alt="" class="img-clipboard">
+    <img src="../assets/pointer.png" alt="" class="img-pointer">
 </body>
 
 </html>
