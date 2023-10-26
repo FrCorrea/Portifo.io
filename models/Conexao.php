@@ -1,5 +1,9 @@
 <?php
 
+namespace models;
+
+use PDO;
+
 class Conexao {
     private static $intancia;
 

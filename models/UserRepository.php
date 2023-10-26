@@ -1,12 +1,21 @@
 <?php
 
-require('Conexao.php');
+namespace models;
+
+use PDO;
+
+require_once('Conexao.php');
 
 class UserRepository {
 
+    private $db;
+
+    public function __construct() {
+        $this->db = Conexao::get();
+    }
+
     public function login($email, $password) {
-        $db = Conexao::get();
-        $query = $this->db->prepare('SELECT * FROM users WHERE email = :email AND password = :password');
+        $query = $this->db->prepare('SELECT * FROM user WHERE email = :email AND password = :password');
         $query->bindParam(':email', $email);
         $query->bindParam(':password', $password);
         $query->execute();
@@ -20,8 +29,7 @@ class UserRepository {
     }
 
     public function register($name, $email, $password, $linkedin, $github) {
-        $db = Conexao::get();
-        $query = $this->db->prepare('INSERT INTO users (name, email, password, linkedin, github) VALUES (:name, :email, :password, :linkedin, :github)');
+        $query = $this->db->prepare('INSERT INTO user (name, email, password, linkedin, github) VALUES (:name, :email, :password, :linkedin, :github)');
         $query->bindParam(':name', $name);
         $query->bindParam(':email', $email);
         $query->bindParam(':password', $password);
@@ -37,8 +45,7 @@ class UserRepository {
     }
 
     public function update($id, $name, $email, $password, $linkedin, $github) {
-        $db = Conexao::get();
-        $query = $this->db->prepare('UPDATE users SET name = :name, email = :email, password = :password, linkedin = :linkedin, github = :github WHERE id = :id');
+        $query = $this->db->prepare('UPDATE user SET name = :name, email = :email, password = :password, linkedin = :linkedin, github = :github WHERE id = :id');
         $query->bindParam(':id', $id);
         $query->bindParam(':name', $name);
         $query->bindParam(':email', $email);
@@ -55,8 +62,7 @@ class UserRepository {
     }
 
     public function delete($id) {
-        $db = Conexao::get();
-        $query = $this->db->prepare('DELETE FROM users WHERE id = :id');
+        $query = $this->db->prepare('DELETE FROM user WHERE id = :id');
         $query->bindParam(':id', $id);
         $query->execute();
 

@@ -1,4 +1,5 @@
 <?php
+    namespace domain;
     class Comentary {
         private $id;
         private $comentary;

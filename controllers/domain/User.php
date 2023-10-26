@@ -1,5 +1,7 @@
 <?php
 
+namespace domain;
+
 class User {
     private $id;
     private $name;

@@ -1,5 +1,7 @@
 <?php
 
+namespace domain;
+
 class Project {
     private $id;
     private $name;
