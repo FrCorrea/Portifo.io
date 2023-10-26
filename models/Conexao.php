@@ -3,6 +3,7 @@
 namespace models;
 
 use PDO;
+use PDOException;
 
 class Conexao {
     private static $intancia;

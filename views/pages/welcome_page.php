@@ -3,7 +3,7 @@
 
 <style>
 body {
-  background-image: url('views/assets/background.png');
+  background-image: url('../assets/background.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -59,7 +59,7 @@ body {
 
     <title>Portfol.io</title>
 
-    <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,7 +74,7 @@ body {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <?php include('views/components/footer.php') ?>
+    <?php include('../components/footer.php') ?>
 
     <div class="welcome-container">
         <div class="welcome-center-container">
@@ -83,10 +83,10 @@ body {
                 <h3 class="welcome-subtitle">Share your projects with the world!</h3>
             </div>
             <div class="welcome-buttons">
-                <button type="button" class="btn btn-dark welcome-button" onclick="location.href = 'views/pages/register_page.php';">
+                <button type="button" class="btn btn-dark welcome-button" onclick="location.href = '/register';">
                     Create account
                 </button>
-                <button type="button" class="btn-yellow-custom welcome-button" onclick="location.href = 'views/pages/public_projects_page.php';">
+                <button type="button" class="btn-yellow-custom welcome-button" onclick="location.href = '/public-projects';">
                     See all projects
                 </button>
             </div>

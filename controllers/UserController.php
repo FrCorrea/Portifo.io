@@ -18,8 +18,18 @@ class UserController {
         }
     }
 
+	 public function login(){
+		$caminho =  './views/pages/login_page.php';
+		header('Location: ' . $caminho);
+	 }
+
+	 public function register(){
+		$caminho =  './views/pages/register_page.php';
+        header('Location: ' . $caminho);
+	 }
+
     public function init(){
-            $caminho =  '../views/pages/login_page.php';
+            $caminho =  '../views/pages/welcome_page.php';
             header('Location: ' . $caminho);
     }
 

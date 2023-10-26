@@ -86,7 +86,7 @@
 
     <title>Portfol.io | Public Projects</title>
 
-    <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>

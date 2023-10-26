@@ -71,4 +71,14 @@ class ProjectsController
         //     }
         // }
     }
+
+    public function editProjects(){
+        $caminho =  './views/pages/edit_project_page.php';
+        header('Location: ' . $caminho);
+    }
+
+    public function getPublicProjects() {
+        $caminho =  './views/pages/public_projects_page.php';
+        header('Location: ' . $caminho);
+    }
 }
