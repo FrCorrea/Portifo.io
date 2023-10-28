@@ -1,5 +1,8 @@
-
 <?php
+
+namespace models;
+
+use PDO;
 
 require_once('Conexao.php');
 
@@ -12,9 +15,11 @@ class ProjectRepository {
         $this->db = Conexao::get();
     }
 
-    public function getPublicRepositories(){
 
-        $query = $this->db->prepare('SELECT * FROM projects WHERE security = public');
+    //home page
+    public function getPublicProjects(){
+
+        $query = $this->db->prepare("SELECT * FROM projects WHERE security = 'public'");
         $query->execute();
 
         if ($query->rowCount() > 0) {
@@ -25,8 +30,23 @@ class ProjectRepository {
         }
     }
 
-    public function getRepositoryById($id){
+    public function getProjectsByName($name){
+            
+            $query = $this->db->prepare('SELECT * FROM projects WHERE name = :name AND security = public');
+            $query->bindValue(':name', $name);
+            $query->execute();
+    
+            if ($query->rowCount() > 0) {
+                $project = $query->fetch(PDO::FETCH_ASSOC);
+                return $project;
+            } else {
+                return false;
+            }
+    }
 
+
+
+    public function getProjectsById($id){
         $query = $this->db->prepare('SELECT * FROM projects WHERE id = :id');
         $query->bindValue(':id', $id);
         $query->execute();
@@ -39,21 +59,7 @@ class ProjectRepository {
         }
     }
 
-    public function getRepositoryByUser($userId){
- 
-        $query = $this->db->prepare('SELECT * FROM projects WHERE user_id = :user_id');
-        $query->bindValue(':user_id', $userId);
-        $query->execute();
-
-        if ($query->rowCount() > 0) {
-            $projects = $query->fetchAll(PDO::FETCH_ASSOC);
-            return $projects;
-        } else {
-            return false;
-        }
-    }
-
-    public function addRepository($project){
+    public function addProject($project){
 
         $query = $this->db->prepare('INSERT INTO projects (name, type, security, description, user_id) VALUES (:name, :type, :security, :description, :user_id)');
         $query->bindParam(':name', $project->getName());
@@ -70,7 +76,8 @@ class ProjectRepository {
         }
     }
 
-    public function updateRepository($project){
+
+    public function updateProject($project){
 
         $query = $this->db->prepare('UPDATE projects SET name = :name, type = :type, security = :security, description = :description WHERE id = :id');
         $query->bindParam(':id', $project->getId());
@@ -87,7 +94,7 @@ class ProjectRepository {
         }
     }
 
-    public function deleteRepository($id){
+    public function deleteProject($id){
 
         $query = $this->db->prepare('DELETE FROM projects WHERE id = :id');
         $query->bindParam(':id', $id);
@@ -99,4 +106,5 @@ class ProjectRepository {
             return false;
         }
     }
+
 }

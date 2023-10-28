@@ -10,7 +10,8 @@ class UserController {
            $userService = new \services\UserService();
            $user = $userService->login($_POST['email'], $_POST['password']);
             if($user){
-                echo 'logado';
+                session_start();
+                $_SESSION['user'] = $user[0]['id'];
             }
             else{
                 echo "Não logado";
@@ -19,18 +20,30 @@ class UserController {
     }
 
 	 public function login(){
-		$caminho =  './views/pages/login_page.php';
-		header('Location: ' . $caminho);
+        require('./views/pages/login_page.php');
 	 }
 
-	 public function register(){
-		$caminho =  './views/pages/register_page.php';
-        header('Location: ' . $caminho);
+
+     public function register(){
+		require('./views/pages/register_page.php');
 	 }
 
-    public function init(){
-            $caminho =  '../views/pages/welcome_page.php';
-            header('Location: ' . $caminho);
+     public function registerUser(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $userService = new \services\UserService();
+            $user = $userService->register($_POST['name'], $_POST['email'], $_POST['password'], $_POST['linkedln'], $_POST['github']);
+            if($user){
+                require('/home');
+            }
+            else{
+                echo "Não cadastrado";
+            }
+            
+        }
+     }
+
+    public function index(){
+        require './views/pages/welcome_page.php' ;
     }
 
 }

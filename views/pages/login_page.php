@@ -33,7 +33,7 @@
         </div>
         <h1 class="create-account-text">Login</h1>
         <div class="form-box">
-            <form method="POST" action="/login">
+            <form method="POST" action="/auth">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp">

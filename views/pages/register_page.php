@@ -33,7 +33,7 @@
         </div>
         <h1 class="create-account-text">Create an account</h1>
         <div class="form-box">
-            <form method="POST" action="/Portifo.io/controllers/RegisterController.php">
+            <form method="POST" action="/registerUser">
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Name</label>
                     <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="name">
@@ -41,6 +41,14 @@
                 <div class="mb-3">
                     <label for="exampleInputEmail1" class="form-label">Email</label>
                     <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="email">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Linkedln</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="linkedln">
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-label">Github</label>
+                    <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="github">
                 </div>
                 <div class="mb-3">
                     <label for="exampleInputPassword1" class="form-label">Password</label>

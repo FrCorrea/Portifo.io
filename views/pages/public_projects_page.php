@@ -117,6 +117,7 @@
                 <button type="submit" class="btn btn-dark public-projects-button" onclick="">
                     Search
                 </button>
+                <h1><?= $projects ?> </h1>
             </div>
             <div class="projects-container">
             <div class="card project-card">
