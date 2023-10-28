@@ -24,8 +24,15 @@ class ProjectsController
         require ('./views/pages/public_projects_page.php');
     }
 
-    public function getPublicProjects() {
-        
+    public function search(){
+        $projectService = new \services\ProjectService();
+        if($_POST['name'] == ""){
+            $projects = json_encode($projectService->getPublicProjects());
+        }
+        else{
+            $projects = json_encode($projectService->getProjectByName($_POST['name']));
+        }
+        require ('./views/pages/public_projects_page.php');
     }
 
     

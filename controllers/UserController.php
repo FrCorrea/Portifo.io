@@ -33,10 +33,12 @@ class UserController {
             $userService = new \services\UserService();
             $user = $userService->register($_POST['name'], $_POST['email'], $_POST['password'], $_POST['linkedln'], $_POST['github']);
             if($user){
-                require('/home');
+               $response = "Cadastrado com sucesso";
+               require ('./views/pages/register_page.php');
             }
             else{
-                echo "Não cadastrado";
+                $response = "Erro no cadastro";
+                require ('./views/pages/register_page.php');
             }
             
         }

@@ -56,25 +56,16 @@
                     <div id="password-help" class="form-text">Must be at least 6 characters and contain a number.</div>
                 </div>
                 <?php
-                $error = null;
-                $success = null;
 
-                if (isset($_GET['error'])) {
-                    $error = $_GET['error'];
-                }
-                if (isset($_GET['success'])) {
-                    $success = $_GET['success'];
-                }
-
-                if ($success) {
+                if ($response && $response === "Cadastrado com sucesso") {
                     echo '<div class="alert alert-success">';
-                    echo $success;
+                    echo $response;
                     echo '</div>';
                 }
 
-                if ($error) {
-                    echo '<div class="alert alert-danger">';
-                    echo $error;
+                if ($response && $response === "Erro no cadastro") {
+                    echo '<div class="alert alert-success">';
+                    echo $response;
                     echo '</div>';
                 }
                 ?>

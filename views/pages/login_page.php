@@ -66,7 +66,7 @@
                 }
                 ?>
                 <div class="login-buttons-group">
-                    <button type="submit" class="btn btn-dark btn-create" onclick="location.href = 'views/pages/home_page.php';">Enter</button>
+                    <button type="submit" class="btn btn-dark btn-create">Enter</button>
                     <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'views/pages/register_page.php';">Register</button>
                 </div>
             </form>

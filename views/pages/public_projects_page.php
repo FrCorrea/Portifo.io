@@ -113,116 +113,61 @@
                 <label for="search">Search a project by project name or author name!</label>
             </div>
             <div class="search-box">
-                <input type="search" id="search" name="q" class="rounded-input" />
-                <button type="submit" class="btn btn-dark public-projects-button" onclick="">
-                    Search
-                </button>
-                <h1><?= $projects ?> </h1>
+
+            <form method="POST" action="/search">
+                <input type="search" id="name" name="name" class="rounded-input" />
+                <button type="submit" class="btn btn-dark public-projects-button">Buscar</button>
+            </form>
+
             </div>
             <div class="projects-container">
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card project-card">
-                <img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">
-                <div class="card-body">
-                    <h4 class="card-title">Mock Project 1</h4>
-                    <p class="card-text">This is a mock project card.</p>
-                    <div class="card-techs-container">
-                        <span class="badge bg-dark">React</span>
-                        <span class="badge bg-dark">Dart</span>
-                        <span class="badge bg-dark">Flutter</span>
-                    </div>
-                </div>
-            </div>
+            
+            <?php 
+                $data = json_decode($projects, true);
+                
+                if ($data === null || $data === false) {
+                    echo '<h1>Nenhum projeto encontrado</h1>';
+                } else {
+                    if (isset($data['id'])) {
+                        // $data is a single JSON object
+                        $json = $data;
+                        echo '<div class="card project-card">';
+                        echo '<img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">';
+                        echo '<div class="card-body">';
+                        echo '<h4 class="card-title">' . $json['name'] . '</h4>';
+                        echo '<p class="card-text">' . $json['description'] . '</p>';
+                
+                        echo '<div class="card-techs-container">';
+                        $technologies = explode(',', $json['technologies']);
+                        foreach ($technologies as $technology) {
+                            echo '<span class="badge bg-dark">' . trim($technology) . '</span>';
+                        }
+                        echo '</div>';
+                
+                        echo '</div>';
+                        echo '</div>';
+                    } else {
+                        // $data is a list of JSON objects
+                        foreach ($data as $json) {
+                            echo '<div class="card project-card">';
+                            echo '<img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">';
+                            echo '<div class="card-body">';
+                            echo '<h4 class="card-title">' . $json['name'] . '</h4>';
+                            echo '<p class="card-text">' . $json['description'] . '</p>';
+                
+                            echo '<div class="card-techs-container">';
+                            $technologies = explode(',', $json['technologies']);
+                            foreach ($technologies as $technology) {
+                                echo '<span class="badge bg-dark">' . trim($technology) . '</span>';
+                            }
+                            echo '</div>';
+                
+                            echo '</div>';
+                            echo '</div>';
+                        }
+                    }
+                }
+                ?>
         </div>
         </div> 
     </div>

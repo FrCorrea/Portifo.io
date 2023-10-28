@@ -30,9 +30,9 @@ class ProjectRepository {
         }
     }
 
-    public function getProjectsByName($name){
+    public function getProjectByName($name){
             
-            $query = $this->db->prepare('SELECT * FROM projects WHERE name = :name AND security = public');
+            $query = $this->db->prepare("SELECT * FROM projects WHERE name = :name AND security = 'public'");
             $query->bindValue(':name', $name);
             $query->execute();
     
