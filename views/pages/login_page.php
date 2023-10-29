@@ -8,7 +8,7 @@
 
     <title>Portfol.io | Login</title>
 
-    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+    <link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,8 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <?php include('../components/header.php') ?>
-    <?php include('../components/footer.php') ?>
+    <?php include('views/components/header.php') ?>
+    <?php include('views/components/footer.php') ?>
 
     <div class="login-container">
         <div class="welcome-box">
@@ -67,14 +67,13 @@
                 ?>
                 <div class="login-buttons-group">
                     <button type="submit" class="btn btn-dark btn-create">Enter</button>
-                    <button type="button" class="btn btn-dark btn-create" onclick="location.href = 'views/pages/register_page.php';">Register</button>
+                    <button type="button" class="btn btn-dark btn-create" onclick="location.href = '/register';">Register</button>
                 </div>
             </form>
         </div>
     </div>
     </div>
-    <img src="../assets/clipboard.png" alt="" class="img-clipboard">
-    <img src="../assets/pointer.png" alt="" class="img-pointer">
+    <img src="views/assets/clipboard.png" alt="" class="img-clipboard">
+    <img src="views/assets/pointer.png" alt="" class="img-pointer">
 </body>
-
 </html>

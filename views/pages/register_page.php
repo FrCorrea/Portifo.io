@@ -8,7 +8,7 @@
 
     <title>Portfol.io | Register</title>
 
-    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+    <link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,8 +23,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <?php include('../components/header.php') ?>
-    <?php include('../components/footer.php') ?>
+    <?php include('views/components/header.php') ?>
 
     <div class="login-container">
         <div class="welcome-box">
@@ -57,15 +56,17 @@
                 </div>
                 <?php
 
-                if ($response && $response === "Cadastrado com sucesso") {
+                $response_ = $response;
+
+                if ($response_ && $response_ === "Cadastrado com sucesso") {
                     echo '<div class="alert alert-success">';
-                    echo $response;
+                    echo $response_;
                     echo '</div>';
                 }
 
-                if ($response && $response === "Erro no cadastro") {
-                    echo '<div class="alert alert-success">';
-                    echo $response;
+                if ($response_ && $response_ === "Erro no cadastro") {
+                    echo '<div class="alert alert-danger">';
+                    echo $response_;
                     echo '</div>';
                 }
                 ?>
@@ -73,9 +74,10 @@
             </form>
         </div>
     </div>
+    <img src="views/assets/clipboard.png" alt="" class="img-clipboard">
+    <img src="views/assets/pointer.png" alt="" class="img-pointer">
 
-    <img src="../assets/clipboard.png" alt="" class="img-clipboard">
-    <img src="../assets/pointer.png" alt="" class="img-pointer">
+    <?php include('views/components/footer.php') ?>
 </body>
 
 </html>

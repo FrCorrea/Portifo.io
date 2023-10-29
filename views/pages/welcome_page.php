@@ -3,7 +3,7 @@
 
 <style>
 body {
-  background-image: url('../assets/background.png');
+  background-image: url('views/assets/background.png');
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -26,6 +26,7 @@ body {
 
 .welcome-buttons {
     margin-top: 4rem;
+    margin-bottom: 1rem;
 }
 
 .welcome-button {
@@ -59,7 +60,7 @@ body {
 
     <title>Portfol.io</title>
 
-    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+    <link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -74,8 +75,7 @@ body {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <?php include('../components/footer.php') ?>
-
+    
     <div class="welcome-container">
         <div class="welcome-center-container">
             <div class="logo-box">
@@ -90,8 +90,12 @@ body {
                     See all projects
                 </button>
             </div>
+            <div>
+                <p>Already have an account? <a href="/login">Login here</a></p>
+            </div>
         </div>
     </div>
+    <?php include('views/components/footer.php') ?>
 </body>
 
 </html>
