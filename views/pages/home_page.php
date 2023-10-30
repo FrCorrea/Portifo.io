@@ -1,9 +1,9 @@
 <?php
 session_start();
 
-if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
+if (empty($_SESSION['user']) || !$_SESSION['user']) {
 	echo "entrou";
-	header('Location: login_page.php');
+	header('Location: /login');
 }
 ?>
 

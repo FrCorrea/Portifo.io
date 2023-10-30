@@ -1,7 +1,7 @@
 <?php
 namespace controllers;
 
-require('services/UserService.php');
+require_once('services/UserService.php');
 
 class UserController {
 
@@ -12,10 +12,12 @@ class UserController {
             if($user){
                 session_start();
                 $_SESSION['user'] = $user[0]['id'];
+                header ('Location: /home');
             }
-            else{
-                echo "Não logado";
-            }
+            // else{
+            //     echo "Não logado";
+            //     require ('./views/pages/login_page.php');
+            // }
         }
     }
 
@@ -34,7 +36,7 @@ class UserController {
             $user = $userService->register($_POST['name'], $_POST['email'], $_POST['password'], $_POST['linkedln'], $_POST['github']);
             if($user){
                $response = "Cadastrado com sucesso";
-               require ('./views/pages/register_page.php');
+               require ('./views/pages/login_page.php');
             }
             else{
                 $response = "Erro no cadastro";
