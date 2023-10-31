@@ -35,6 +35,23 @@ class ProjectsController
         require('./views/pages/edit_project_page.php');
     }
 
+    public function editSelectedProject($projectId) {
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $projectService = new \services\ProjectService();
+            $project = $projectService->editProject($projectId, $_POST['name'], $_POST['type'], "public", $_POST['description']);
+            if($project){
+               $response = "Projeto adicionado com sucesso";
+               header ('Location: /home');
+               echo $response;
+            }
+            else{
+                $response = "Erro ao adicionar projeto";
+                header ('Location: /add-project');
+                echo $response;
+            }
+        }
+    }
+
     public function publicProjects() {
         $projectService = new \services\ProjectService();
         $projects = json_encode($projectService->getPublicProjects());

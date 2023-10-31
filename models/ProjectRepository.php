@@ -90,14 +90,12 @@ class ProjectRepository {
     }
 
 
-    public function updateProject($project){
-
-        $query = $this->db->prepare('UPDATE projects SET name = :name, type = :type, security = :security, description = :description WHERE id = :id');
-        $query->bindParam(':id', $project->getId());
-        $query->bindParam(':name', $project->getName());
-        $query->bindParam(':type', $project->getType());
-        $query->bindParam(':security', $project->getSecurity());
-        $query->bindParam(':description', $project->getDescription());
+    public function updateProject($id, $name, $type, $description){
+        $query = $this->db->prepare('UPDATE projects SET name = :name, type = :type, description = :description WHERE id = :id');
+        $query->bindParam(':name', $name);
+        $query->bindParam(':type', $type);
+        $query->bindParam(':description', $description);
+        $query->bindParam(':id', $id);
         $query->execute();
 
         if ($query->rowCount() > 0) {

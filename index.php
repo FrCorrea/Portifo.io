@@ -20,5 +20,6 @@ Router::get('/add-project', 'ProjectsController@addProjects');
 Router::post('/add-new-project/{user}', 'ProjectsController@addNewProject');
 
 Router::get('/edit-project', 'ProjectsController@editProjects');
+Router::post('/edit-selected-project', 'ProjectsController@editSelectedProject');
 
 Router::start();

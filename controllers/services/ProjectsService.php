@@ -33,4 +33,7 @@
             return $this->projectRepository->addProject($name, $type, $security, $description, $userId);
         }
 
+        public function editProject($id, $name, $type, $description){
+            return $this->projectRepository->updateProject($id, $name, $type, $description);
+        }
     }
