@@ -38,15 +38,15 @@ class ProjectsController
     public function editSelectedProject($projectId) {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $projectService = new \services\ProjectService();
-            $project = $projectService->editProject($projectId, $_POST['name'], $_POST['type'], "public", $_POST['description']);
+            $project = $projectService->editProject($projectId, $_POST['name'], $_POST['type'], $_POST['description']);
             if($project){
-               $response = "Projeto adicionado com sucesso";
+               $response = "Projeto editado com sucesso";
                header ('Location: /home');
                echo $response;
             }
             else{
-                $response = "Erro ao adicionar projeto";
-                header ('Location: /add-project');
+                $response = "Erro ao editar projeto";
+                header ('Location: /edit-project');
                 echo $response;
             }
         }
