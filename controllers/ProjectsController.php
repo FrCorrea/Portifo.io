@@ -75,5 +75,18 @@ class ProjectsController
         require ('./views/pages/public_projects_page.php');
     }
 
-    
+    public function deleteProject($projectId) {
+        $projectService = new \services\ProjectService();
+        $deletedProject = json_encode($projectService->deleteProject($projectId));
+        if($deletedProject){
+            $response = "Projeto excluído com sucesso";
+            header ('Location: /home');
+            echo $response;
+         }
+         else{
+             $response = "Erro ao excluir projeto";
+             header ('Location: /edit-project');
+             echo $response;
+         }
+    }
 }
