@@ -39,7 +39,7 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Edit project</b></h3>
-            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = 'home_page.php';">
+            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = '/user-projects';">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
         </div>
