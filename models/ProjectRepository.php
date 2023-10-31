@@ -59,14 +59,27 @@ class ProjectRepository {
         }
     }
 
-    public function addProject($project){
+    public function getProjectsByUserId(){
+        $query = $this->db->prepare('SELECT * FROM projects WHERE user_id = :id');
+        $query->bindValue(':id', $_SESSION['user']);
+        $query->execute();
+
+        if ($query->rowCount() > 0) {
+            $projects = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $projects;
+        } else {
+            return false;
+        }
+    }
+
+    public function addProject($name, $type, $security, $description, $userId){
 
         $query = $this->db->prepare('INSERT INTO projects (name, type, security, description, user_id) VALUES (:name, :type, :security, :description, :user_id)');
-        $query->bindParam(':name', $project->getName());
-        $query->bindParam(':type', $project->getType());
-        $query->bindParam(':security', $project->getSecurity());
-        $query->bindParam(':description', $project->getDescription());
-        $query->bindParam(':user_id', $project->getUser_id());
+        $query->bindParam(':name', $name);
+        $query->bindParam(':type', $type);
+        $query->bindParam(':security', $security);
+        $query->bindParam(':description', $description);
+        $query->bindParam(':user_id', $userId);
         $query->execute();
 
         if ($query->rowCount() > 0) {

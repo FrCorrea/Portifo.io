@@ -2,6 +2,7 @@
 namespace controllers;
 
 require_once('services/UserService.php');
+require_once('services/ProjectsService.php');
 
 class UserController {
 
@@ -10,14 +11,17 @@ class UserController {
            $userService = new \services\UserService();
            $user = $userService->login($_POST['email'], $_POST['password']);
             if($user){
-                session_start();
                 $_SESSION['user'] = $user[0]['id'];
-                header ('Location: /home');
+                $_SESSION['user_name'] = $user[0]['name'];
+                $_SESSION['user_email'] = $user[0]['email'];
+                $projectService = new \services\ProjectService();
+                $userProjects = json_encode($projectService->getProjectByUserId());
+                require ('./views/pages/home_page.php');
             }
-            // else{
-            //     echo "Não logado";
-            //     require ('./views/pages/login_page.php');
-            // }
+            else{
+                echo "Não logado";
+                require ('./views/pages/login_page.php');
+            }
         }
     }
 

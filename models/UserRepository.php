@@ -3,6 +3,7 @@
 namespace models;
 
 use PDO;
+use PDOException;
 
 require_once('Conexao.php');
 

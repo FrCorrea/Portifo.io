@@ -12,6 +12,10 @@
         }
 
         public function login($email, $senha){
+            if($email == null || $senha == null){
+                return false;
+            }
+            
             return $this->userRepository->login($email, $senha);
         }
 

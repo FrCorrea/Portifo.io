@@ -14,6 +14,23 @@ class ProjectsController
         require('./views/pages/add_project_page.php');
     }
 
+    public function addNewProject($user) {
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            $projectService = new \services\ProjectService();
+            $project = $projectService->addProject($_POST['name'], $_POST['type'], "public", $_POST['description'], $user);
+            if($project){
+               $response = "Projeto adicionado com sucesso";
+               header ('Location: /home');
+               echo $response;
+            }
+            else{
+                $response = "Erro ao adicionar projeto";
+                header ('Location: /add-project');
+                echo $response;
+            }
+        }
+    }
+
     public function editProjects(){
         require('./views/pages/edit_project_page.php');
     }
@@ -23,6 +40,12 @@ class ProjectsController
         $projects = json_encode($projectService->getPublicProjects());
         require ('./views/pages/public_projects_page.php');
     }
+
+    // public function userProjects() {
+    //     $projectService = new \services\ProjectService();
+    //     $userProjects = json_encode($projectService->getProjectByUserId());
+    //     require ('./views/pages/public_projects_page.php');
+    // }
 
     public function search(){
         $projectService = new \services\ProjectService();

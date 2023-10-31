@@ -15,7 +15,10 @@ Router::get('/public-projects', 'ProjectsController@publicProjects');
 Router::post('/search', 'ProjectsController@search');
 
 Router::get('/home', 'ProjectsController@showProjects');
+
 Router::get('/add-project', 'ProjectsController@addProjects');
+Router::post('/add-new-project/{user}', 'ProjectsController@addNewProject');
+
 Router::get('/edit-project', 'ProjectsController@editProjects');
 
 Router::start();

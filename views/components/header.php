@@ -29,6 +29,6 @@
   </div>
   <div class="header-profile-container">
     <p class="header-profile-name"><?php echo $_SESSION['user_name'] ?? '' ?></p>
-    <img src="../assets/birb.png" alt="" class="header-profile-img">
+    <img src="views/assets/birb.png" alt="" class="header-profile-img">
   </div>
 </nav>

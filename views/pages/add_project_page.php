@@ -1,8 +1,7 @@
 <?php
 session_start();
-
-if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: /Portifo.io/views/pages/login_page.php');
+if (empty($_SESSION['user']) || !$_SESSION['user']) {
+    header('Location: /login');
 }
 ?>
 
@@ -16,7 +15,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
 
     <title>Portfol.io | Add Project</title>
 
-    <link rel="stylesheet" type="text/css" href="../assets/style.css ">
+    <link rel="stylesheet" type="text/css" href="views/assets/style.css ">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,18 +31,18 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <?php include('../components/header.php') ?>
-    <?php include('../components/aside.php') ?>
+    <?php include('views/components/header.php') ?>
+    <?php include('views/components/aside.php') ?>
 
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
-            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = 'home_page.php';">
+            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = '/home';">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="Controller@login">
+            <form method="POST" action="/add-new-project/<?= $_SESSION['user'] ?>">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
