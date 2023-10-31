@@ -56,17 +56,15 @@
                 </div>
                 <?php
 
-                $response_ = $response;
-
-                if ($response_ && $response_ === "Cadastrado com sucesso") {
+                if (isset($response) && $response === "Cadastrado com sucesso") {
                     echo '<div class="alert alert-success">';
-                    echo $response_;
+                    echo $response;
                     echo '</div>';
                 }
 
-                if ($response_ && $response_ === "Erro no cadastro") {
+                if (isset($response) && $response === "Erro no cadastro") {
                     echo '<div class="alert alert-danger">';
-                    echo $response_;
+                    echo $response;
                     echo '</div>';
                 }
                 ?>

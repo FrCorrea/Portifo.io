@@ -24,9 +24,8 @@
             return $this->projectRepository->getProjectsByUserId();
         }
 
-        public function addProject($name, $type, $security, $description, $userId){
-            echo " E4NTROU AQUI"; 
-            if($name == null || $userId == null){
+        public function addProject($name, $type, $security, $description, $userId){ 
+            if($name == '' || $userId == null || $type == '' || $security == '' ){
                 return false;
             }
 
@@ -35,5 +34,9 @@
 
         public function editProject($id, $name, $type, $description){
             return $this->projectRepository->updateProject($id, $name, $type, $description);
+        }
+
+        public function getProjectsByUserIdAndType($id, $type){
+            return $this->projectRepository->getProjectsByUserIdAndType($id,$type);
         }
     }

@@ -44,16 +44,15 @@ class ProjectRepository {
             }
     }
 
-
-
-    public function getProjectsById($id){
-        $query = $this->db->prepare('SELECT * FROM projects WHERE id = :id');
+    public function getProjectsByUserIdAndType($id,$type){
+        $query = $this->db->prepare('SELECT * FROM projects WHERE user_id = :id AND type = :type');
         $query->bindValue(':id', $id);
+        $query->bindValue(':type', $type);
         $query->execute();
 
         if ($query->rowCount() > 0) {
-            $project = $query->fetch(PDO::FETCH_ASSOC);
-            return $project;
+            $projects = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $projects;
         } else {
             return false;
         }

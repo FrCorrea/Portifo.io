@@ -1,6 +1,7 @@
 <?php
 
 require_once('services/ProjectsService.php');
+require_once('services/UserService.php');
 
 class ProjectsController
 {
@@ -11,6 +12,9 @@ class ProjectsController
 
     public function addProjects()
     {
+        session_start();
+        $user_service = new \services\UserService();
+        $user = json_encode($user_service->getUserById($_SESSION['user']));
         require('./views/pages/add_project_page.php');
     }
 
@@ -18,15 +22,15 @@ class ProjectsController
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $projectService = new \services\ProjectService();
             $project = $projectService->addProject($_POST['name'], $_POST['type'], "public", $_POST['description'], $user);
+
             if($project){
-               $response = "Projeto adicionado com sucesso";
-               header ('Location: /home');
-               echo $response;
+                session_start();
+                $response = "Projeto adicionado com sucesso";
+                header ('Location: /user-projects');
             }
             else{
                 $response = "Erro ao adicionar projeto";
                 header ('Location: /add-project');
-                echo $response;
             }
         }
     }
@@ -35,13 +39,28 @@ class ProjectsController
         require('./views/pages/edit_project_page.php');
     }
 
+    public function getProjectsByUserIdAndType(){
+        if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            session_start();
+            $projectService = new \services\ProjectService();
+            $userProjects = json_encode($projectService->getProjectsByUserIdAndType($_SESSION['user'], $_POST['type']));
+            echo $_POST['type'];
+            $user_service = new \services\UserService();
+            $user = json_encode($user_service->getUserById($_SESSION['user']));
+            require('./views/pages/home_page.php');
+        }
+        else { echo 'Erro ao carregar projetos';}
+
+        
+    }
+
     public function editSelectedProject($projectId) {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
             $projectService = new \services\ProjectService();
             $project = $projectService->editProject($projectId, $_POST['name'], $_POST['type'], $_POST['description']);
             if($project){
                $response = "Projeto editado com sucesso";
-               header ('Location: /home');
+               header ('Location: /user-projects');
                echo $response;
             }
             else{
@@ -58,11 +77,14 @@ class ProjectsController
         require ('./views/pages/public_projects_page.php');
     }
 
-    // public function userProjects() {
-    //     $projectService = new \services\ProjectService();
-    //     $userProjects = json_encode($projectService->getProjectByUserId());
-    //     require ('./views/pages/public_projects_page.php');
-    // }
+    public function userProjects() {
+        session_start();
+        $projectService = new \services\ProjectService();
+        $userProjects = json_encode($projectService->getProjectByUserId());
+        $user_service = new \services\UserService();
+        $user = json_encode($user_service->getUserById($_SESSION['user']));
+        require ('./views/pages/home_page.php');
+     }
 
     public function search(){
         $projectService = new \services\ProjectService();

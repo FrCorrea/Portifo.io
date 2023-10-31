@@ -43,23 +43,8 @@
                     <input type="password" class="form-control" id="exampleInputPassword1" name="password">
                 </div>
                 <?php
-                $error = null;
-                $success = null;
-
-                if (isset($_GET['error'])) {
-                    $error = $_GET['error'];
-                }
-                if (isset($_GET['success'])) {
-                    $success = $_GET['success'];
-                }
-
-                if ($success) {
-                    echo '<div class="alert alert-success">';
-                    echo $success;
-                    echo '</div>';
-                }
-
-                if ($error) {
+               
+                if (isset($error)) {
                     echo '<div class="alert alert-danger">';
                     echo $error;
                     echo '</div>';

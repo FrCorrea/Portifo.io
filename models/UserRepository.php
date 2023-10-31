@@ -15,6 +15,19 @@ class UserRepository {
         $this->db = Conexao::get();
     }
 
+    public function getUserById($id) {
+        $query = $this->db->prepare('SELECT * FROM user WHERE id = :id');
+        $query->bindParam(':id', $id);
+        $query->execute();
+
+        if ($query->rowCount() > 0) {
+            $user = $query->fetchAll(PDO::FETCH_ASSOC);
+            return $user;
+        } else {
+            return false;
+        }
+    }
+
     public function login($email, $password) {
         $query = $this->db->prepare('SELECT * FROM user WHERE email = :email AND password = :password');
         $query->bindParam(':email', $email);
@@ -47,7 +60,7 @@ class UserRepository {
         }
 
         catch(PDOException $e){
-            return $e->getMessage("Usuário já existe");
+            return $e->getMessage("Erro ao fazer a consulta");
         }
 
        

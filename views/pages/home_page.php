@@ -1,6 +1,4 @@
 <?php
-session_start();
-
 if (empty($_SESSION['user']) || !$_SESSION['user']) {
 	echo "entrou";
 	header('Location: /login');
@@ -79,7 +77,7 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 
 	<div class="projects-container">
 		<div class="projects-header">
-			<h3 class="projects-title"><i>Websites<i></h3>
+			<h3 class="projects-title"><i>Projects<i></h3>
 			<button type="button" class="btn btn-dark" onclick="location.href = '/add-project';">Add Project</button>
 		</div>
 		<div class="cards-container">
@@ -136,7 +134,7 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 					?>
 						</div>
 					</div>
-					<button type="button" class="btn btn-danger btn-logout" onclick="location.href = 'logout.php';">Logout</button>
+					<button type="button" class="btn btn-danger btn-logout" onclick="location.href = '/logout';">Logout</button>
 </body>
 
 </html>

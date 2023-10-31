@@ -11,15 +11,12 @@ class UserController {
            $userService = new \services\UserService();
            $user = $userService->login($_POST['email'], $_POST['password']);
             if($user){
+                session_start();
                 $_SESSION['user'] = $user[0]['id'];
-                $_SESSION['user_name'] = $user[0]['name'];
-                $_SESSION['user_email'] = $user[0]['email'];
-                $projectService = new \services\ProjectService();
-                $userProjects = json_encode($projectService->getProjectByUserId());
-                require ('./views/pages/home_page.php');
+                header ('Location: /user-projects');
             }
             else{
-                echo "Não logado";
+                $error = "Usuário ou senha incorretos";
                 require ('./views/pages/login_page.php');
             }
         }
@@ -49,9 +46,15 @@ class UserController {
             
         }
      }
+     
+    public function logout(){
+        session_start();
+        session_destroy();
+        header ('Location: /');
+    }
 
     public function index(){
         require './views/pages/welcome_page.php' ;
     }
-
 }
+

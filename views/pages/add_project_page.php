@@ -1,5 +1,4 @@
 <?php
-session_start();
 if (empty($_SESSION['user']) || !$_SESSION['user']) {
     header('Location: /login');
 }
@@ -37,7 +36,8 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
     <div class="add-project-container">
         <div class="add-project-header">
             <h3><b>Add new project</b></h3>
-            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = '/home';">
+
+            <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = '/user-projects';">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
         </div>
@@ -51,10 +51,10 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
                     <div class="col-sm ">
                         <label class="form-label">Type</label>
                         <select class="form-select" aria-label="Default select example" name="type">
-                            <option selected>Select the project type</option>
-                            <option value="1">Website</option>
-                            <option value="2">Application</option>
-                            <option value="3">Design</option>
+                            <option value = "" ></option>
+                            <option value="Website">Website</option>
+                            <option value="Application">Application</option>
+                            <option value="Design">Design</option>
                         </select>
                     </div>
                 </div>
@@ -80,33 +80,31 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
                     </div>
                 </div>
 
+                <div class="row input-row">
+                    <div class="col-sm ">
+                        <label class="form-label">Security</label>
+                        <select class="form-select" aria-label="Default select example" name="security">
+                            <option value = "" ></option>
+                            <option value="public">Public</option>
+                            <option value="private">Private</option>
+                        </select>
+                    </div>
+                </div>
+
                 <?php
-                $error = null;
-                $success = null;
-                
-                if (isset($_GET['error'])) {
-                    $error = $_GET['error'];
-                }
-                if (isset($_GET['success'])) {
-                    $success = $_GET['success'];
-                }
-
-                if ($success) { 
-                    echo '<div class="alert alert-success">';
-                    echo $success;
-                    echo '</div>';
-                }
-
-                if ($error) {
+               
+                if ($response) {
                     echo '<div class="alert alert-danger">';
-                        echo $error;
+                    echo $response;
                     echo '</div>';
                 }
                 ?>
-                   
+
                 <div class="buttons-group">
                     <button type="submit" class="btn btn-dark btn-custom">Add project</button>
                 </div>
+
+                
             </form>
         </div>
     </div>
