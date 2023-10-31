@@ -45,7 +45,7 @@
     <?php else: ?>
         <p class="header-profile-name"></p>
     <?php endif; ?>
-    <img src="views/assets/birb.png" alt="" class="header-profile-img">
+    <img src="views/assets/images/birb.png" alt="" class="header-profile-img">
 </div>
 
 </nav>

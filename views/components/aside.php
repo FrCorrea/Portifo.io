@@ -3,7 +3,7 @@
 ?>
 <div class="aside-container">
     <div class="img-container">
-        <img src="views/assets/birb.png" alt="" class="profile-img">
+        <img src="views/assets/images/birb.png" alt="" class="profile-img">
     </div>
     <div class="profile-header">
         <h3 class="profile-name"><b>

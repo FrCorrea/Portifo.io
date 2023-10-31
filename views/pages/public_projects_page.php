@@ -1,91 +1,12 @@
 <!doctype html>
 <html lang="en">
-
-<style>
-    body {
-        background-image: url('views/assets/background.png');
-        background-repeat: no-repeat;
-        background-size: cover;
-    }
-
-    .public-projects-container {
-        display: flex;
-        justify-content: center;
-    }
-
-    .public-projects-center-container {
-        margin-left: 0 auto;
-        margin-top: 5%;
-        text-align: center;
-    }
-
-    .logo-public-projects {
-        font-family: 'Mochiy Pop P One', sans-serif;
-        font-size: 50px;
-        margin-bottom: 3rem;
-    }
-
-    .welcome-buttons {
-        margin-top: 4rem;
-    }
-
-    .welcome-button {
-        width: 240px;
-    }
-
-    .welcome-subtitle {
-        font-style: italic;
-        color: #79747E;
-        font-weight: 400;
-    }
-
-    .public-projects-search-title {
-        font-family: 'IBM Plex Sans Condensed', sans-serif;
-        font-size: 20px;
-        margin-bottom: 1rem;
-    }
-
-    .rounded-input {
-        width: 600px;
-        padding: 6px;
-        border: 3px solid #212529;
-        border-radius: 10px;
-    }
-
-    .projects-container {
-        display: flex;
-        flex-wrap: wrap;
-        width: 300;
-        gap: 0.5rem;
-    }
-
-    .project-card {
-        width: 16rem;
-        flex-grow: auto;
-        flex-basis: auto;
-        transition: all .2s ease-in-out;
-    }
-
-    .project-card:hover {
-        transform: scale(1.1);
-        transition: .2s;
-    }
-
-    .card-techs-container {
-        padding-right: 1rem;
-    }
-
-    .card-text {
-        margin-bottom: 0.5rem;
-    }
-</style>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Portfol.io | Public Projects</title>
 
+    <link rel="stylesheet" type="text/css" href="views/assets/styles/pages/public-projects.css">
     <link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

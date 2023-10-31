@@ -56,6 +56,7 @@ class ProjectsController
 
     public function editSelectedProject($projectId) {
         if($_SERVER['REQUEST_METHOD'] === 'POST'){
+            echo $projectId;
             $projectService = new \services\ProjectService();
             $project = $projectService->editProject($projectId, $_POST['name'], $_POST['type'], $_POST['description']);
             if($project){
@@ -102,7 +103,7 @@ class ProjectsController
         $deletedProject = json_encode($projectService->deleteProject($projectId));
         if($deletedProject){
             $response = "Projeto excluído com sucesso";
-            header ('Location: /home');
+            header ('Location: /user-projects');
             echo $response;
          }
          else{

@@ -1,65 +1,12 @@
 <!doctype html>
 <html lang="en">
-
-<style>
-body {
-  background-image: url('views/assets/background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.welcome-container {
-    display: flex;
-    justify-content: center;
-}
-
-.welcome-center-container {
-    margin-left: 0 auto;
-    padding-top: 10%;
-    text-align: center;
-}
-
-.logo-welcome-big {
-    font-family: 'Mochiy Pop P One', sans-serif;
-    font-size: 100px;
-}
-
-.welcome-buttons {
-    margin-top: 4rem;
-    margin-bottom: 1rem;
-}
-
-.welcome-button {
-    width: 240px;
-}
-
-.btn-yellow-custom {
-    border: 1px solid #212529;
-    background-color: #FCFFF4;
-    border-radius: 0.375rem;
-    padding: 0.375rem 0.75rem;
-    margin-top: 0;
-    font-weight: 500;
-    transition: .15s ease-in-out;
-}
-
-.btn-yellow-custom:hover {
-    background-color: #ECF1DA;
-}
-
-.welcome-subtitle {
-    font-style: italic;
-    color: #79747E;
-    font-weight: 400;
-}
-
-</style>
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Portfol.io</title>
 
+    <link rel="stylesheet" type="text/css" href="views/assets/styles/pages/welcome.css">
     <link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">

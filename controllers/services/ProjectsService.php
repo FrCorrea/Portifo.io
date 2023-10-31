@@ -39,4 +39,8 @@
         public function getProjectsByUserIdAndType($id, $type){
             return $this->projectRepository->getProjectsByUserIdAndType($id,$type);
         }
+
+        public function deleteProject($id){
+            return $this->projectRepository->deleteProject($id);
+        }
     }

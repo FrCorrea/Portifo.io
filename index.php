@@ -29,5 +29,4 @@ Router::post('/edit-selected-project/{projectId}', 'ProjectsController@editSelec
 
 Router::get('/delete-project/{projectId}', 'ProjectsController@deleteProject');
 
-
 Router::start();

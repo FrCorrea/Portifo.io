@@ -192,38 +192,6 @@
     margin: 0;
 }
 
-.education-card {
-    display: flex;
-    border: 1px solid white;
-}
-
-.education-container {
-    margin-top: 1rem;
-}
-
-.cards-container {
-    justify-content: space-between;
-    display: flex;
-}
-
-.project-card {
-    width: 23rem;
-    transition: all .2s ease-in-out;
-}
-
-.project-card:hover {
-    transform: scale(1.1);
-    transition: .2s;
-}
-
-.card-techs-container {
-    padding-right: 1rem;
-}
-
-.card-text {
-    margin-bottom: 0.5rem;
-}
-
 .header-profile-container {
     width: 15rem;
     display: flex;

@@ -7,49 +7,6 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 
 <!doctype html>
 <html lang="en">
-<style>
-	.projects-container {
-		width: 100%;
-		gap: 0.5rem;
-	}
-	
-	.cards-container {
-		display: grid;
-		grid-template-columns: 1fr 1fr 1fr;
-		grid-gap: 1rem;
-	}
-	
-	.project-card {
-		transition: all .2s ease-in-out;
-	}
-
-	.project-card:hover {
-		transform: scale(1.1);
-		transition: .2s;
-	}
-
-	.card-techs-container {
-		padding-right: 1rem;
-	}
-
-	.card-text {
-		margin-bottom: 0.5rem;
-	}
-
-	.btn-edit {
-		width: 15%;
-		float: right;
-		position: absolute;
-		z-index: 1000;
-		right: 0;
-		margin: 0.3rem;
-	}
-
-	.projects-header {
-		display: flex;
-		justify-content: space-between;
-	}
-</style>
 
 <head>
 	<meta charset="utf-8">
@@ -57,6 +14,7 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 
 	<title>Portfol.io | Home</title>
 
+	<link rel="stylesheet" type="text/css" href="views/assets/styles/pages/home.css">
 	<link rel="stylesheet" type="text/css" href="views/assets/style.css">
 
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -90,11 +48,13 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 					$json = $data;
 			?>
 					<div class="card project-card">
-						<button type='button' class='btn btn-secondary btn-edit' onclick="location.href = '/edit-project';">
-							<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
-								<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>
-							</svg>
-						</button>
+						<div class="btn-edit">
+							<button type='button' class='btn btn-secondary' onclick="location.href = '/edit-project';">
+								<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+									<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>
+								</svg>
+							</button>
+						</div>
 						<img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">';
 						<div class="card-body">
 					<?php
@@ -111,9 +71,18 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 					echo '</div>';
 					echo '</div>';
 				} else {
-					// $data is a list of JSON objects
 					foreach ($data as $json) {
+						$_SESSION['selectedProject'] = $json;
 						echo '<div class="card project-card">';
+						echo '<div class="btn-edit">';
+						?>
+						<button type='button' class='btn btn-secondary' onclick="location.href = '/edit-project';">
+						<?php
+						echo '		<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">';
+						echo '			<path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"></path>';
+						echo '		</svg>';
+						echo '	</button>';
+						echo '</div>';
 						echo '<img class="img-fluid" alt="100%x280" src="https://img.freepik.com/free-vector/website-setup-concept-illustration_114360-4256.jpg">';
 						echo '<div class="card-body">';
 						echo '<h4 class="card-title">' . $json['name'] . '</h4>';

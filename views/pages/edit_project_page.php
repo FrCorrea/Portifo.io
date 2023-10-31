@@ -16,7 +16,8 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 
     <title>Portfol.io | Add Project</title>
 
-    <link rel="stylesheet" type="text/css" href="/Portifo.io/views/assets/style.css ">
+    <link rel="stylesheet" type="text/css" href="views/assets/style.css">
+    <link rel="stylesheet" type="text/css" href="views/assets/styles/pages/edit-project.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -32,8 +33,8 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js" integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa" crossorigin="anonymous"></script>
 
-    <?php include('../components/header.php') ?>
-    <?php include('../components/aside.php') ?>
+    <?php include('views/components/header.php') ?>
+    <?php include('views/components/aside.php') ?>
 
     <div class="add-project-container">
         <div class="add-project-header">
@@ -43,7 +44,7 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="/edit-selected-project">
+            <form method="POST" action="/edit-selected-project/<?= $_SESSION['selectedProject']['id'] ?>">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
@@ -107,11 +108,10 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
                    
                 <div class="buttons-group">
                     <button type="submit" class="btn btn-dark btn-custom">Add project</button>
-                    <button class="btn btn-danger btn-custom">Delete project</button>
+                    <button type="button" class="btn btn-danger btn-custom" onclick="location.href = '/delete-project/<?= $_SESSION['selectedProject']['id'] ?>';">Delete project</button>
                 </div>
             </form>
         </div>
     </div>
 </body>
-
 </html>

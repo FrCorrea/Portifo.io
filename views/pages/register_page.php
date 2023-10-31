@@ -72,7 +72,7 @@
             </form>
         </div>
     </div>
-    <img src="views/assets/clipboard.png" alt="" class="img-clipboard">
+    <img src="views/assets/images/clipboard.png" alt="" class="img-clipboard">
     <!-- <img src="views/assets/pointer.png" alt="" class="img-pointer"> -->
 
     <!-- <?php include('views/components/footer.php') ?> -->
