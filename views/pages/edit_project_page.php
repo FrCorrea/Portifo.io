@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
-    header('Location: /Portifo.io/views/pages/login_page.php');
+if (empty($_SESSION['user']) || !$_SESSION['user']) {
+    header('Location: /login');
 }
 ?>
 
@@ -43,7 +43,7 @@ if (empty($_SESSION['logged_in']) || !$_SESSION['logged_in']) {
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="/Portifo.io/controllers/AddProjectController.php">
+            <form method="POST" action="/edit-selected-project">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
