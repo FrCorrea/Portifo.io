@@ -1,4 +1,6 @@
 <?php
+session_start();
+
 if (empty($_SESSION['user']) || !$_SESSION['user']) {
     header('Location: /login');
 }
@@ -14,7 +16,8 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 
     <title>Portfol.io | Add Project</title>
 
-    <link rel="stylesheet" type="text/css" href="views/assets/style.css ">
+    <link rel="stylesheet" type="text/css" href="views/assets/style.css">
+    <link rel="stylesheet" type="text/css" href="views/assets/styles/pages/edit-project.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,14 +38,13 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
 
     <div class="add-project-container">
         <div class="add-project-header">
-            <h3><b>Add new project</b></h3>
-
+            <h3><b>Edit project</b></h3>
             <button type="button" class="btn btn-dark btn-floating btn-back-custom" onclick="location.href = '/user-projects';">
                 <i class="fa fa-arrow-left" aria-hidden="true"></i>
             </button>
         </div>
         <div class="project-inputs">
-            <form method="POST" action="/add-new-project/<?= $_SESSION['user'] ?>">
+            <form method="POST" action="/edit-selected-project/<?= $_SESSION['selectedProject']['id'] ?>">
                 <div class="row input-row">
                     <div class="col-sm from-group">
                         <label class="form-label">Name</label>
@@ -51,10 +53,10 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
                     <div class="col-sm ">
                         <label class="form-label">Type</label>
                         <select class="form-select" aria-label="Default select example" name="type">
-                            <option value = "" ></option>
-                            <option value="Website">Website</option>
-                            <option value="Application">Application</option>
-                            <option value="Design">Design</option>
+                            <option selected>Select the project type</option>
+                            <option value="1">Website</option>
+                            <option value="2">Application</option>
+                            <option value="3">Design</option>
                         </select>
                     </div>
                 </div>
@@ -80,34 +82,36 @@ if (empty($_SESSION['user']) || !$_SESSION['user']) {
                     </div>
                 </div>
 
-                <div class="row input-row">
-                    <div class="col-sm ">
-                        <label class="form-label">Security</label>
-                        <select class="form-select" aria-label="Default select example" name="security">
-                            <option value = "" ></option>
-                            <option value="public">Public</option>
-                            <option value="private">Private</option>
-                        </select>
-                    </div>
-                </div>
-
                 <?php
-               
-                if ($response) {
+                $error = null;
+                $success = null;
+                
+                if (isset($_GET['error'])) {
+                    $error = $_GET['error'];
+                }
+                if (isset($_GET['success'])) {
+                    $success = $_GET['success'];
+                }
+
+                if ($success) { 
+                    echo '<div class="alert alert-success">';
+                    echo $success;
+                    echo '</div>';
+                }
+
+                if ($error) {
                     echo '<div class="alert alert-danger">';
-                    echo $response;
+                        echo $error;
                     echo '</div>';
                 }
                 ?>
-
+                   
                 <div class="buttons-group">
                     <button type="submit" class="btn btn-dark btn-custom">Add project</button>
+                    <button type="button" class="btn btn-danger btn-custom" onclick="location.href = '/delete-project/<?= $_SESSION['selectedProject']['id'] ?>';">Delete project</button>
                 </div>
-
-                
             </form>
         </div>
     </div>
 </body>
-
 </html>
