@@ -11,7 +11,7 @@ Um site feito para você montar seu Portfolio de maneira simples e intuitiva!
 
 ### Banco de dados
 -> Baixar o arquivo portifoio.sql \
--> Importar o arquivo no phpMyAdmin
+-> Importar o arquivo no phpMyAdmin \
 -> Iniciar o Apache e o MySQL pelo Xampp
 
 ### Páginas
